@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#006DB6">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="AAC PNC">
+<meta name="description" content="Application Chef de Cabine — Air Algérie">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+<title>AAC PNC — Air Algérie</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<!-- LOGIN SCREEN -->
+<div id="login-screen" class="login-screen">
+  <div class="login-bg">
+    <div class="login-stripe s1"></div>
+    <div class="login-stripe s2"></div>
+    <div class="login-stripe s3"></div>
+  </div>
+  <div class="login-container">
+    <div class="login-logo">
+      <img src="aa-logo.svg" alt="Air Algérie" class="airline-logo">
+      <div class="app-name">
+        <span class="app-name-main">PNC<span class="app-name-accent">Pro</span></span>
+        <span class="app-name-sub">Air Algérie — Chef de Cabine</span>
+      </div>
+    </div>
+
+    <div class="login-card">
+      <div class="login-card-title">
+        <i class="ti ti-lock-open"></i>
+        Connexion AIMS
+      </div>
+      <div class="login-card-sub">Utilisez vos identifiants AIMS habituels</div>
+
+      <div class="form-group">
+        <label class="form-label"><i class="ti ti-id-badge-2"></i> Matricule PNC</label>
+        <input type="text" class="form-input" id="aims-user" placeholder="Ex: PNC-04882" autocomplete="username">
+      </div>
+      <div class="form-group">
+        <label class="form-label"><i class="ti ti-key"></i> Mot de passe AIMS</label>
+        <div class="pass-wrap">
+          <input type="password" class="form-input" id="aims-pass" placeholder="••••••••" autocomplete="current-password">
+          <button class="pass-toggle" onclick="togglePass()"><i class="ti ti-eye" id="eye-icon"></i></button>
+        </div>
+      </div>
+
+      <div class="remember-row">
+        <label class="checkbox-label">
+          <input type="checkbox" id="remember-me" checked>
+          <span class="checkbox-custom"></span>
+          Se souvenir de moi
+        </label>
+        <a href="#" class="link-muted">Mot de passe oublié?</a>
+      </div>
+
+      <button class="btn-login" onclick="doLogin()" id="login-btn">
+        <i class="ti ti-login"></i>
+        Connexion
+      </button>
+
+      <div id="login-error" class="login-error" style="display:none">
+        <i class="ti ti-alert-circle"></i>
+        Identifiants incorrects. Vérifiez vos données AIMS.
+      </div>
+    </div>
+
+    <div class="login-footer">
+      <span>v2.1.0</span>
+      <span>•</span>
+      <span>Air Algérie © 2025</span>
+      <span>•</span>
+      <span>Sécurisé SSL</span>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN APP -->
+<div id="main-app" class="main-app" style="display:none">
+
+  <!-- Header -->
+  <header class="app-header" id="app-header">
+    <button class="menu-toggle" onclick="toggleSidebar()"><i class="ti ti-menu-2"></i></button>
+    <div class="header-flight">
+      <span class="flight-num" id="h-flight">AF 7101</span>
+      <span class="flight-route" id="h-route">ALG → CDG</span>
+    </div>
+    <div class="header-right">
+      <div class="header-time" id="header-clock">--:--</div>
+      <div class="user-chip" onclick="showProfile()">
+        <div class="user-initials" id="user-initials">--</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sidebar -->
+  <div class="sidebar-overlay" id="sidebar-overlay" onclick="closeSidebar()"></div>
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">
+        <span class="sb-logo-text">AAC <span style="color:var(--gold)">PNC</span>Pro</span>
+      </div>
+      <button class="sidebar-close" onclick="closeSidebar()"><i class="ti ti-x"></i></button>
+    </div>
+    <div class="sidebar-user" id="sidebar-user-info">
+      <div class="sb-avatar" id="sb-avatar">SC</div>
+      <div>
+        <div class="sb-name" id="sb-name">Sophie Chénier</div>
+        <div class="sb-role">Chef de Cabine</div>
+        <div class="sb-matric" id="sb-matric">PNC-04882</div>
+      </div>
+    </div>
+    <div class="sidebar-nav">
+      <button class="sb-btn active" onclick="navTo('dashboard',this)"><i class="ti ti-layout-dashboard"></i>Tableau de bord</button>
+      <button class="sb-btn" onclick="navTo('vol',this)"><i class="ti ti-plane"></i>Vol & Avion</button>
+      <button class="sb-btn" onclick="navTo('equipage',this)"><i class="ti ti-users"></i>Équipage</button>
+      <button class="sb-btn" onclick="navTo('passagers',this)"><i class="ti ti-armchair"></i>Passagers</button>
+      <button class="sb-btn" onclick="navTo('catering',this)"><i class="ti ti-chef-hat"></i>Catering</button>
+      <button class="sb-btn" onclick="navTo('meteo',this)"><i class="ti ti-cloud-storm"></i>Météo</button>
+      <button class="sb-btn" onclick="navTo('questionnaire',this)"><i class="ti ti-brain"></i>Questionnaire</button>
+      <button class="sb-btn" onclick="navTo('manuels',this)"><i class="ti ti-books"></i>Manuels & Docs</button>
+      <button class="sb-btn" onclick="navTo('rapport',this)"><i class="ti ti-file-report"></i>Rapport de vol</button>
+      <div class="sb-separator"></div>
+      <button class="sb-btn sb-danger" onclick="doLogout()"><i class="ti ti-logout"></i>Déconnexion</button>
+    </div>
+  </nav>
+
+  <!-- Bottom Nav (mobile) -->
+  <nav class="bottom-nav" id="bottom-nav">
+    <button class="bn-btn active" onclick="navTo('dashboard',this)"><i class="ti ti-layout-dashboard"></i><span>Accueil</span></button>
+    <button class="bn-btn" onclick="navTo('equipage',this)"><i class="ti ti-users"></i><span>Équipage</span></button>
+    <button class="bn-btn" onclick="navTo('passagers',this)"><i class="ti ti-armchair"></i><span>PAX</span></button>
+    <button class="bn-btn" onclick="navTo('catering',this)"><i class="ti ti-chef-hat"></i><span>Catering</span></button>
+    <button class="bn-btn" onclick="navTo('meteo',this)"><i class="ti ti-cloud"></i><span>Météo</span></button>
+  </nav>
+
+  <!-- Content -->
+  <main class="app-content" id="app-content">
+
+    <!-- ═══════════ DASHBOARD ═══════════ -->
+    <section class="screen active" id="screen-dashboard">
+      <div class="page-title"><i class="ti ti-layout-dashboard"></i>Tableau de bord</div>
+
+      <div class="alert-critical" id="dash-alerts">
+        <i class="ti ti-alert-triangle"></i>
+        <div><strong>3 alertes passagers :</strong> 14C (WCHR) · 22A (UM-UNAC) · 31F (allergie arachides)</div>
+      </div>
+
+      <div class="grid-4">
+        <div class="kpi-card k-blue"><div class="kpi-label">Vol</div><div class="kpi-val" id="kpi-vol">AH 7101</div><div class="kpi-sub" id="kpi-route">ALG–CDG</div></div>
+        <div class="kpi-card k-green"><div class="kpi-label">PAX à bord</div><div class="kpi-val" id="kpi-pax">0</div><div class="kpi-sub">/ <span id="kpi-pax-total">186</span> prévus</div></div>
+        <div class="kpi-card k-gold"><div class="kpi-label">Départ prévu</div><div class="kpi-val" id="kpi-dep">08:30</div><div class="kpi-sub" id="kpi-dep-status">On Time</div></div>
+        <div class="kpi-card k-red"><div class="kpi-label">Équipage</div><div class="kpi-val">7</div><div class="kpi-sub">PNC confirmés</div></div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-title"><i class="ti ti-clock"></i>Chronologie vol</div>
+          <div class="timeline" id="flight-timeline"></div>
+        </div>
+        <div class="card">
+          <div class="card-title"><i class="ti ti-user-check"></i>Embarquement en temps réel</div>
+          <div class="boarding-progress">
+            <div class="bp-numbers">
+              <span class="bp-current" id="bp-current">0</span>
+              <span class="bp-sep">/</span>
+              <span class="bp-total" id="bp-total">186</span>
+            </div>
+            <div class="bp-bar-wrap">
+              <div class="bp-bar" id="bp-bar" style="width:0%"></div>
+            </div>
+            <div class="bp-pct" id="bp-pct">0%</div>
+          </div>
+          <div class="boarding-controls">
+            <button class="btn-sm btn-green" onclick="adjustBoarding(1)"><i class="ti ti-plus"></i>+1 PAX</button>
+            <button class="btn-sm btn-red" onclick="adjustBoarding(-1)"><i class="ti ti-minus"></i>-1 PAX</button>
+            <button class="btn-sm btn-gold" onclick="setBoardingFinal()"><i class="ti ti-check"></i>Final PAX</button>
+            <button class="btn-sm btn-outline" onclick="resetBoarding()"><i class="ti ti-refresh"></i>Reset</button>
+          </div>
+          <div id="final-pax-display" class="final-pax" style="display:none"></div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-title"><i class="ti ti-cloud"></i>Météo résumé</div>
+          <div class="meteo-quick">
+            <div class="mq-item">
+              <div class="mq-city">ALG</div>
+              <div class="mq-icon"><i class="ti ti-sun" style="color:#F59E0B"></i></div>
+              <div class="mq-temp">28°C</div>
+              <div class="mq-desc">Ensoleillé</div>
+            </div>
+            <div class="mq-arrow"><i class="ti ti-arrow-right"></i></div>
+            <div class="mq-item">
+              <div class="mq-city">CDG</div>
+              <div class="mq-icon"><i class="ti ti-cloud-rain" style="color:#60A5FA"></i></div>
+              <div class="mq-temp">18°C</div>
+              <div class="mq-desc">Pluie légère</div>
+            </div>
+          </div>
+          <div class="turb-alert"><i class="ti ti-wave-square"></i> Turbulences légères FL350-FL380 · Zone méditerranée</div>
+        </div>
+        <div class="card">
+          <div class="card-title"><i class="ti ti-chef-hat"></i>Catering — Statut</div>
+          <div class="cat-status-list" id="cat-status-dash"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ VOL & AVION ═══════════ -->
+    <section class="screen" id="screen-vol">
+      <div class="page-title"><i class="ti ti-plane"></i>Informations Vol & Avion</div>
+
+      <div class="card card-highlight">
+        <div class="card-title"><i class="ti ti-plane-departure"></i>Informations de vol</div>
+        <div class="info-grid">
+          <div class="info-item"><div class="info-label">N° de vol</div><div class="info-val mono" id="v-num">AH 7101</div></div>
+          <div class="info-item"><div class="info-label">Départ</div><div class="info-val mono" id="v-dep">ALG — Houari Boumediene</div></div>
+          <div class="info-item"><div class="info-label">Destination</div><div class="info-val mono" id="v-dest">CDG — Paris Charles de Gaulle</div></div>
+          <div class="info-item"><div class="info-label">Heure départ (STD)</div><div class="info-val mono" id="v-std">08:30 UTC</div></div>
+          <div class="info-item"><div class="info-label">Heure arrivée (STA)</div><div class="info-val mono" id="v-sta">10:50 UTC</div></div>
+          <div class="info-item"><div class="info-label">Durée prévue</div><div class="info-val mono" id="v-dur">2h20</div></div>
+          <div class="info-item"><div class="info-label">Statut</div><div class="info-val"><span class="badge badge-green">On Time</span></div></div>
+          <div class="info-item"><div class="info-label">Escales</div><div class="info-val mono">Aucune</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><i class="ti ti-settings-2"></i>Avion & Configuration cabine</div>
+        <div class="info-grid">
+          <div class="info-item"><div class="info-label">Type appareil</div><div class="info-val mono" id="v-type">Boeing 737-800</div></div>
+          <div class="info-item"><div class="info-label">Immatriculation</div><div class="info-val mono">7T-VKA</div></div>
+          <div class="info-item"><div class="info-label">Configuration</div><div class="info-val mono" id="v-config">Y186 (Mono-classe)</div></div>
+          <div class="info-item"><div class="info-label">Portes opérationnelles</div><div class="info-val mono">L1 L2 R1 R2</div></div>
+          <div class="info-item"><div class="info-label">Sorties de secours</div><div class="info-val mono">8 (4 × OWE)</div></div>
+          <div class="info-item"><div class="info-label">IFE</div><div class="info-val mono">Oui — Ecrans individuels</div></div>
+        </div>
+        <div style="margin-top:16px">
+          <div class="equip-title">Équipements de bord</div>
+          <div class="equip-grid">
+            <div class="equip-item ok"><i class="ti ti-first-aid-kit"></i>Kit médical</div>
+            <div class="equip-item ok"><i class="ti ti-heart-rate-monitor"></i>DEA</div>
+            <div class="equip-item ok"><i class="ti ti-lungs"></i>Oxygène</div>
+            <div class="equip-item ok"><i class="ti ti-fire-extinguisher"></i>Extincteurs</div>
+            <div class="equip-item ok"><i class="ti ti-lifebuoy"></i>Gilets</div>
+            <div class="equip-item ok"><i class="ti ti-mask"></i>Masques O₂</div>
+            <div class="equip-item ok"><i class="ti ti-axe"></i>Hache crashe</div>
+            <div class="equip-item ok"><i class="ti ti-microphone"></i>PA System</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><i class="ti ti-layout-board"></i>Plan de cabine — B737-800</div>
+        <div class="cabin-plan">
+          <div class="cabin-zone zone-biz">
+            <div class="zone-label">PREMIÈRE — Rgs 1-3</div>
+            <div class="zone-seats" id="plan-first"></div>
+          </div>
+          <div class="cabin-sep"><i class="ti ti-separator"></i></div>
+          <div class="cabin-zone zone-eco">
+            <div class="zone-label">ÉCONOMIQUE — Rgs 4-31</div>
+            <div class="zone-seats" id="plan-eco"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ ÉQUIPAGE ═══════════ -->
+    <section class="screen" id="screen-equipage">
+      <div class="page-title"><i class="ti ti-users"></i>Équipage</div>
+
+      <div class="card">
+        <div class="card-title"><i class="ti ti-id-badge-2"></i>Commandant de Bord</div>
+        <div class="crew-card crew-cdb">
+          <div class="crew-avatar cdb"><i class="ti ti-stars"></i></div>
+          <div class="crew-details">
+            <div class="crew-name">Cpt. Nadir BENALI</div>
+            <div class="crew-role">Commandant de Bord</div>
+            <div class="crew-meta"><i class="ti ti-id"></i> MAT-CDB-00421</div>
+            <div class="crew-meta"><i class="ti ti-phone"></i> +213 770 421 000</div>
+          </div>
+          <span class="badge badge-gold">CDB</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><i class="ti ti-users-group"></i>Personnel Navigant Commercial</div>
+        <div id="pnc-list"></div>
+        <button class="btn-outline btn-full" style="margin-top:12px" onclick="showAddPNC()"><i class="ti ti-user-plus"></i>Ajouter PNC</button>
+      </div>
+
+      <!-- PNC Detail Modal -->
+      <div class="modal" id="pnc-modal">
+        <div class="modal-box">
+          <div class="modal-header">
+            <div class="modal-title" id="modal-pnc-name">Détail PNC</div>
+            <button class="modal-close" onclick="closePNCModal()"><i class="ti ti-x"></i></button>
+          </div>
+          <div class="modal-body" id="modal-pnc-body"></div>
+        </div>
+      </div>
+
+      <!-- Déclaration Générale -->
+      <div class="card">
+        <div class="card-title"><i class="ti ti-file-certificate"></i>Déclaration Générale Numérique</div>
+        <div class="decl-gen" id="decl-gen-content"></div>
+        <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap">
+          <button class="btn-gold" onclick="printDeclaration()"><i class="ti ti-printer"></i>Imprimer</button>
+          <button class="btn-outline" onclick="pdfDeclaration()"><i class="ti ti-file-type-pdf"></i>Export PDF</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ PASSAGERS ═══════════ -->
+    <section class="screen" id="screen-passagers">
+      <div class="page-title"><i class="ti ti-armchair"></i>Gestion Passagers</div>
+
+      <!-- Tabs -->
+      <div class="tabs">
+        <button class="tab active" onclick="switchTab('pax-overview',this)">Vue générale</button>
+        <button class="tab" onclick="switchTab('pax-seating',this)">Seating</button>
+        <button class="tab" onclick="switchTab('pax-special',this)">Assistance <span class="tab-badge" id="sp-count">5</span></button>
+        <button class="tab" onclick="switchTab('pax-pil',this)">PIL</button>
+      </div>
+
+      <div class="tab-content active" id="pax-overview">
+        <div class="grid-4">
+          <div class="kpi-card k-gold"><div class="kpi-label">Prévisionnel</div><div class="kpi-val">186</div><div class="kpi-sub">Total attendus</div></div>
+          <div class="kpi-card k-green"><div class="kpi-label">Embarqués</div><div class="kpi-val" id="pax-bord-kpi">0</div><div class="kpi-sub">En temps réel</div></div>
+          <div class="kpi-card k-blue"><div class="kpi-label">Bébés (INF)</div><div class="kpi-val">3</div><div class="kpi-sub">0–24 mois</div></div>
+          <div class="kpi-card k-red"><div class="kpi-label">Assistance</div><div class="kpi-val">5</div><div class="kpi-sub">Spéciale</div></div>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><i class="ti ti-crown"></i>Passagers VIP</div>
+          <div class="vip-list">
+            <div class="vip-item">
+              <div class="vip-badge">VIP</div>
+              <div class="vip-info">
+                <div class="vip-name">M. IBRAHIM Sofiane</div>
+                <div class="vip-seat">Siège 2A · Première</div>
+              </div>
+              <span class="badge badge-gold">Protocole</span>
+            </div>
+            <div class="vip-item">
+              <div class="vip-badge vip-dip">DIPL</div>
+              <div class="vip-info">
+                <div class="vip-name">Mme. RAHMANI Leïla</div>
+                <div class="vip-seat">Siège 1A · Première</div>
+              </div>
+              <span class="badge badge-blue">Diplomatique</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><i class="ti ti-dog"></i>Animaux à bord</div>
+          <div class="animal-item">
+            <i class="ti ti-dog" style="font-size:24px;color:var(--amber)"></i>
+            <div>
+              <div style="font-weight:600;font-size:13px">1 chien (10kg) — Cabine</div>
+              <div style="font-size:12px;color:var(--muted)">Propriétaire: Siège 15C · Cage conforme IATA · Docs vétérinaires vérifiés</div>
+            </div>
+            <span class="badge badge-green">OK</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="pax-seating">
+        <div class="card">
+          <div class="card-title"><i class="ti ti-layout-board"></i>Plan de cabine interactif</div>
+          <div class="seat-legend">
+            <span><span class="sl-dot occ"></span>Occupé</span>
+            <span><span class="sl-dot free"></span>Libre</span>
+            <span><span class="sl-dot special"></span>Assistance</span>
+            <span><span class="sl-dot vip"></span>VIP</span>
+            <span><span class="sl-dot baby"></span>Bébé</span>
+          </div>
+          <div class="seat-map" id="full-seat-map"></div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="pax-special">
+        <div class="card">
+          <div class="card-title"><i class="ti ti-accessible"></i>Passagers nécessitant assistance</div>
+          <div id="special-pax-list"></div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="pax-pil">
+        <div class="card">
+          <div class="card-title">
+            <i class="ti ti-list"></i>PIL — Passenger Information List
+            <div class="card-actions">
+              <input type="text" class="search-input" placeholder="Rechercher..." id="pil-search" oninput="filterPIL(this.value)">
+            </div>
+          </div>
+          <div class="pil-table-wrap">
+            <table class="pil-table" id="pil-table">
+              <thead><tr><th>#</th><th>Nom Prénom</th><th>Siège</th><th>Type</th><th>Spécial</th></tr></thead>
+              <tbody id="pil-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ CATERING ═══════════ -->
+    <section class="screen" id="screen-catering">
+      <div class="page-title"><i class="ti ti-chef-hat"></i>Catering</div>
+
+      <div class="card">
+        <div class="card-title"><i class="ti ti-building-store"></i>Fournisseur & Service</div>
+        <div class="info-grid">
+          <div class="info-item"><div class="info-label">Fournisseur</div><div class="info-val">LSG Sky Chefs Algérie</div></div>
+          <div class="info-item"><div class="info-label">Type de service</div><div class="info-val">Repas chauds + collation</div></div>
+          <div class="info-item"><div class="info-label">Bon de livraison</div><div class="info-val mono">ALG-2025-7101</div></div>
+          <div class="info-item"><div class="info-label">Heure chargement</div><div class="info-val">06:30 UTC</div></div>
+          <div class="info-item"><div class="info-label">Validateur</div><div class="info-val">K. MARZALI (CDC)</div></div>
+          <div class="info-item"><div class="info-label">Statut</div><div class="info-val"><span class="badge badge-green">Validé</span></div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><i class="ti ti-list-check"></i>Inventaire catering</div>
+        <div class="cat-table-header">
+          <span>Prestation</span><span>Requis</span><span>Chargé</span><span>Statut</span>
+        </div>
+        <div id="catering-full-list"></div>
+        <div class="cat-footer">
+          <button class="btn-gold" onclick="validerCatering()"><i class="ti ti-file-check"></i>Valider & Signer</button>
+          <span id="cat-val-time" style="font-size:12px;color:var(--muted)"></span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><i class="ti ti-wine"></i>Boissons & Bar</div>
+        <div class="drinks-grid" id="drinks-grid"></div>
+      </div>
+    </section>
+
+    <!-- ═══════════ MÉTÉO ═══════════ -->
+    <section class="screen" id="screen-meteo">
+      <div class="page-title"><i class="ti ti-cloud-storm"></i>Météorologie</div>
+
+      <div class="grid-2">
+        <div class="card weather-card dep">
+          <div class="wc-city"><i class="ti ti-map-pin"></i> Alger — ALG</div>
+          <div class="wc-main">
+            <i class="ti ti-sun wc-icon" style="color:#F59E0B"></i>
+            <div>
+              <div class="wc-temp">28°C</div>
+              <div class="wc-desc">Ensoleillé · Humidité 42%</div>
+            </div>
+          </div>
+          <div class="wc-details">
+            <div class="wcd-item"><div class="wcd-label">Vent</div><div class="wcd-val">12 kt / 270°</div></div>
+            <div class="wcd-item"><div class="wcd-label">Visibilité</div><div class="wcd-val">&gt; 10 km</div></div>
+            <div class="wcd-item"><div class="wcd-label">QNH</div><div class="wcd-val">1018 hPa</div></div>
+            <div class="wcd-item"><div class="wcd-label">METAR</div><div class="wcd-val">CAVOK</div></div>
+          </div>
+        </div>
+        <div class="card weather-card arr">
+          <div class="wc-city"><i class="ti ti-map-pin"></i> Paris CDG — CDG</div>
+          <div class="wc-main">
+            <i class="ti ti-cloud-rain wc-icon" style="color:#60A5FA"></i>
+            <div>
+              <div class="wc-temp">18°C</div>
+              <div class="wc-desc">Pluie légère · Humidité 76%</div>
+            </div>
+          </div>
+          <div class="wc-details">
+            <div class="wcd-item"><div class="wcd-label">Vent</div><div class="wcd-val">18 kt / 240°</div></div>
+            <div class="wcd-item"><div class="wcd-label">Visibilité</div><div class="wcd-val">6 km</div></div>
+            <div class="wcd-item"><div class="wcd-label">QNH</div><div class="wcd-val">1009 hPa</div></div>
+            <div class="wcd-item"><div class="wcd-label">Nuages</div><div class="wcd-val">BKN 1200ft</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><i class="ti ti-plane"></i>Conditions en route</div>
+        <div class="grid-4">
+          <div class="kpi-card k-blue"><div class="kpi-label">Altitude</div><div class="kpi-val">FL350</div><div class="kpi-sub">-58°C ext.</div></div>
+          <div class="kpi-card k-green"><div class="kpi-label">Turbulences</div><div class="kpi-val small">Légères</div><div class="kpi-sub">LGT TURB FL330-FL380</div></div>
+          <div class="kpi-card k-gold"><div class="kpi-label">Vent croisière</div><div class="kpi-val">72 kt</div><div class="kpi-sub">Jet stream 270°</div></div>
+          <div class="kpi-card k-green"><div class="kpi-label">SIGMET actif</div><div class="kpi-val small">Aucun</div><div class="kpi-sub">Zone libre</div></div>
+        </div>
+        <div class="turb-zone-card">
+          <div style="font-weight:600;margin-bottom:6px;color:var(--amber)"><i class="ti ti-alert-triangle"></i> Avis turbulences</div>
+          <p style="font-size:13px;line-height:1.6">Turbulences légères à modérées signalées entre FL330 et FL380 au-dessus de la Méditerranée (secteur 35N-38N / 003E-010E). Ceintures recommandées pendant le service. CDB informé.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><i class="ti ti-calendar-event"></i>Prévisions sur 6 heures</div>
+        <div class="forecast-grid">
+          <div class="fc-item"><div class="fc-time">08:00</div><i class="ti ti-sun" style="color:#F59E0B"></i><div class="fc-temp">28°C</div></div>
+          <div class="fc-item"><div class="fc-time">09:00</div><i class="ti ti-cloud-sun" style="color:#93C5FD"></i><div class="fc-temp">26°C</div></div>
+          <div class="fc-item"><div class="fc-time">10:00</div><i class="ti ti-cloud" style="color:#94A3B8"></i><div class="fc-temp">22°C</div></div>
+          <div class="fc-item"><div class="fc-time">11:00</div><i class="ti ti-cloud-rain" style="color:#60A5FA"></i><div class="fc-temp">20°C</div></div>
+          <div class="fc-item"><div class="fc-time">12:00</div><i class="ti ti-cloud-rain" style="color:#60A5FA"></i><div class="fc-temp">18°C</div></div>
+          <div class="fc-item"><div class="fc-time">13:00</div><i class="ti ti-cloud" style="color:#94A3B8"></i><div class="fc-temp">19°C</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ QUESTIONNAIRE ═══════════ -->
+    <section class="screen" id="screen-questionnaire">
+      <div class="page-title"><i class="ti ti-brain"></i>Questionnaire Sécurité</div>
+
+      <div class="card" id="quiz-start-card">
+        <div class="quiz-intro">
+          <i class="ti ti-shield-check quiz-intro-icon"></i>
+          <h2>Questionnaire aléatoire</h2>
+          <p>Test automatique sur les procédures de vol et de sécurité. Questions générées aléatoirement à chaque session.</p>
+          <div class="quiz-stats-row">
+            <div class="qs-item"><div class="qs-val" id="qs-total">10</div><div class="qs-label">Questions</div></div>
+            <div class="qs-item"><div class="qs-val">15 min</div><div class="qs-label">Durée max</div></div>
+            <div class="qs-item"><div class="qs-val">70%</div><div class="qs-label">Score requis</div></div>
+          </div>
+          <button class="btn-gold btn-large" onclick="startQuiz()"><i class="ti ti-player-play"></i>Démarrer le test</button>
+        </div>
+        <div class="quiz-history">
+          <div class="qh-title">Historique des tests</div>
+          <div id="quiz-history-list"></div>
+        </div>
+      </div>
+
+      <div class="card" id="quiz-active-card" style="display:none">
+        <div class="quiz-header-bar">
+          <div class="quiz-progress-info">
+            <span id="q-num">1</span> / <span id="q-total">10</span>
+          </div>
+          <div class="quiz-timer" id="quiz-timer">15:00</div>
+          <div class="quiz-progress-bar"><div id="quiz-prog-fill" style="width:10%"></div></div>
+        </div>
+        <div class="quiz-question" id="quiz-question"></div>
+        <div class="quiz-options" id="quiz-options"></div>
+        <div class="quiz-nav">
+          <button class="btn-outline" onclick="prevQuestion()"><i class="ti ti-arrow-left"></i>Précédent</button>
+          <button class="btn-gold" onclick="nextQuestion()" id="next-btn">Suivant <i class="ti ti-arrow-right"></i></button>
+        </div>
+      </div>
+
+      <div class="card" id="quiz-result-card" style="display:none">
+        <div class="quiz-result" id="quiz-result-content"></div>
+      </div>
+    </section>
+
+    <!-- ═══════════ MANUELS ═══════════ -->
+    <section class="screen" id="screen-manuels">
+      <div class="page-title"><i class="ti ti-books"></i>Manuels & Documents</div>
+
+      <div class="search-bar">
+        <i class="ti ti-search"></i>
+        <input type="text" placeholder="Rechercher un manuel, procédure..." id="manual-search" oninput="filterManuals(this.value)">
+      </div>
+
+      <div id="manuals-container"></div>
+    </section>
+
+    <!-- ═══════════ RAPPORT ═══════════ -->
+    <section class="screen" id="screen-rapport">
+      <div class="page-title"><i class="ti ti-file-report"></i>Rapport de vol</div>
+
+      <div class="card">
+        <div class="card-title"><i class="ti ti-info-circle"></i>Informations générales</div>
+        <div class="grid-2">
+          <div class="form-group"><label class="form-label">N° de vol</label><input class="form-input" value="AH 7101" id="r-vol" readonly></div>
+          <div class="form-group"><label class="form-label">Date</label><input class="form-input" type="date" id="r-date" value="2025-06-26"></div>
+          <div class="form-group"><label class="form-label">Trajet</label><input class="form-input" value="ALG — CDG" id="r-trajet" readonly></div>
+          <div class="form-group"><label class="form-label">Appareil</label><input class="form-input" value="B737-800 · 7T-VKA" id="r-avion" readonly></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><i class="ti ti-users"></i>Passagers — Final</div>
+        <div class="grid-4">
+          <div class="form-group"><label class="form-label">Prévisionnel</label><input class="form-input" value="186" id="r-prev"></div>
+          <div class="form-group"><label class="form-label">Embarqués</label><input class="form-input" id="r-emb" value="0"></div>
+          <div class="form-group"><label class="form-label">Bébés (INF)</label><input class="form-input" value="3" id="r-inf"></div>
+          <div class="form-group"><label class="form-label">Noshow</label><input class="form-input" value="0" id="r-noshow"></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><i class="ti ti-clock"></i>Temps réels</div>
+        <div class="grid-4">
+          <div class="form-group"><label class="form-label">ATD (départ réel)</label><input class="form-input" type="time" id="r-atd" value="08:35"></div>
+          <div class="form-group"><label class="form-label">ATA (arrivée réelle)</label><input class="form-input" type="time" id="r-ata" value="10:58"></div>
+          <div class="form-group"><label class="form-label">Bloc total</label><input class="form-input" id="r-bloc" value="2h23"></div>
+          <div class="form-group"><label class="form-label">Retard (min)</label><input class="form-input" id="r-retard" value="+5"></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><i class="ti ti-alert-triangle"></i>Compte-rendu</div>
+        <div class="form-group"><label class="form-label">Qualité service cabine</label>
+          <select class="form-select" id="r-svc"><option>Très satisfaisant</option><option>Satisfaisant</option><option>Non satisfaisant</option></select>
+        </div>
+        <div class="form-group"><label class="form-label">Incidents à signaler</label>
+          <select class="form-select" id="r-inc"><option>Aucun incident</option><option>Incident mineur — voir annexe</option><option>Incident majeur — voir fiche</option></select>
+        </div>
+        <div class="form-group"><label class="form-label">Observations Chef de Cabine</label>
+          <textarea class="form-textarea" id="r-obs" rows="4" placeholder="Commentaires, anomalies équipements, retours passagers...">Vol opéré sans incident majeur. Service standard effectué. Turbulences légères signalées sur 20 min au-dessus de la Méditerranée.</textarea>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><i class="ti ti-signature"></i>Signatures</div>
+        <div class="grid-2">
+          <div>
+            <div class="sig-label">Chef de Cabine</div>
+            <div class="sig-box" id="sig-cdc" onclick="signDocument('cdc')"><i class="ti ti-pencil"></i> Cliquer pour signer</div>
+          </div>
+          <div>
+            <div class="sig-label">Commandant de Bord</div>
+            <div class="sig-box" id="sig-cdb"><i class="ti ti-clock" style="color:var(--amber)"></i> En attente CDB</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:4px">
+        <button class="btn-outline"><i class="ti ti-printer"></i>Imprimer</button>
+        <button class="btn-outline"><i class="ti ti-download"></i>Export PDF</button>
+        <button class="btn-gold btn-full" onclick="submitRapport()"><i class="ti ti-send"></i>Soumettre rapport AIMS</button>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- Install PWA Banner -->
+<div class="install-banner" id="install-banner" style="display:none">
+  <i class="ti ti-download"></i>
+  <span>Installer l'application sur votre appareil</span>
+  <button class="install-btn" onclick="installApp()">Installer</button>
+  <button class="install-close" onclick="document.getElementById('install-banner').style.display='none'"><i class="ti ti-x"></i></button>
+</div>
+
+<script src="app.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js').catch(() => {});
+    });
+  }
+</script>
+</body>
+</html>
