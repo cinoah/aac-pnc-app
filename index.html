@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#00205B">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="AAC PNC">
-<title>AAC PNC â Air AlgÃ©rie</title>
+<title>AAC PNC - Air Alg&eacute;rie</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 :root{--navy:#00205B;--navy2:#012B7A;--gold:#C8922A;--gold2:#E5B04A;--green:#10B981;--red:#EF4444;--amber:#F59E0B;--blue:#3B82F6;--muted:rgba(255,255,255,0.5);--border:rgba(200,146,42,0.25);--card:rgba(1,43,122,0.6);--r:12px}
@@ -280,21 +280,21 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sa
     <div class="login-logo">
       <div class="plane"></div>
       <h1>AAC PNCPro</h1>
-      <p>AIR ALGÃRIE â CHEF DE CABINE</p>
+      <p>AIR ALG&Eacute;RIE - CHEF DE CABINE</p>
     </div>
     <div class="login-card">
       <div class="login-title">Connexion AIMS / eCrew</div>
       <label class="fl">Matricule PNC</label>
       <input class="fi" id="lu" type="text" placeholder="Ex: PNC-04882" autocomplete="username">
       <label class="fl">Mot de passe AIMS</label>
-      <input class="fi" id="lp" type="password" placeholder="â¢â¢â¢â¢â¢â¢â¢â¢" autocomplete="current-password">
+      <input class="fi" id="lp" type="password" placeholder="--------" autocomplete="current-password">
       <label style="display:flex;align-items:center;gap:7px;font-size:12px;color:var(--muted);margin-bottom:14px;cursor:pointer">
         <input type="checkbox" id="remem" checked style="width:14px;height:14px">Se souvenir de moi
       </label>
       <button class="btn-login" onclick="doLogin()" id="btn-l">Connexion</button>
       <div class="login-err" id="l-err"></div>
     </div>
-    <div class="login-footer">v2.1.0 â¢ Air AlgÃ©rie Â© 2025 â¢ SÃ©curisÃ©</div>
+    <div class="login-footer">v2.1.0 - Air Alg&eacute;rie (c) 2025 - S&eacute;curis&eacute;</div>
   </div>
 </div>
 
@@ -332,16 +332,16 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sa
     <div class="sb-nav">
       <button class="sb-btn active" onclick="goTo('dash',this)">Tableau de bord</button>
       <button class="sb-btn" onclick="goTo('vol',this)">Vol & Avion</button>
-      <button class="sb-btn" onclick="goTo('equipage',this)"> Ãquipage</button>
+      <button class="sb-btn" onclick="goTo('equipage',this)"> &Eacute;quipage</button>
       <button class="sb-btn" onclick="goTo('pax',this)">Passagers</button>
       <button class="sb-btn" onclick="goTo('catering',this)">Catering</button>
-      <button class="sb-btn" onclick="goTo('meteo',this)">MÃ©tÃ©o</button>
+      <button class="sb-btn" onclick="goTo('meteo',this)">M&eacute;t&eacute;o</button>
       <button class="sb-btn" onclick="goTo('quiz',this)">Questionnaire</button>
       <button class="sb-btn" onclick="goTo('manuels',this)">Manuels</button>
       <button class="sb-btn" onclick="goTo('rapport',this)">Rapport de vol</button>
       <button class="sb-btn" onclick="goTo('profil',this)">Mon Profil</button>
       <div class="sb-sep"></div>
-      <button class="sb-btn sb-out" onclick="doLogout()">DÃ©connexion</button>
+      <button class="sb-btn sb-out" onclick="doLogout()">D&eacute;connexion</button>
     </div>
   </nav>
 
@@ -351,12 +351,12 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sa
     <!-- DASHBOARD -->
     <div class="sc active" id="sc-dash">
       <div class="pg-title">Tableau de bord</div>
-      <div class="alert-r"><span></span><div><strong>3 alertes passagers :</strong> 14C (WCHR) Â· 22A (UNAC) Â· 31F (allergie arachides)</div></div>
+      <div class="alert-r"><span></span><div><strong>3 alertes passagers :</strong> 14C (WCHR) - 22A (UNAC) - 31F (allergie arachides)</div></div>
       <div class="g4">
-        <div class="kpi kb"><div class="kl">Vol</div><div class="kv">AH 7101</div><div class="ks">ALGâCDG</div></div>
-        <div class="kpi kg"><div class="kl">PAX embarquÃ©s</div><div class="kv" id="d-pax">0</div><div class="ks">/ 186 prÃ©vus</div></div>
-        <div class="kpi ko"><div class="kl">DÃ©part</div><div class="kv">08:30</div><div class="ks" style="color:#6EE7B7">On Time</div></div>
-        <div class="kpi kr"><div class="kl">Ãquipage</div><div class="kv">7</div><div class="ks">PNC confirmÃ©s</div></div>
+        <div class="kpi kb"><div class="kl">Vol</div><div class="kv">AH 7101</div><div class="ks">ALG-CDG</div></div>
+        <div class="kpi kg"><div class="kl">PAX embarqu&eacute;s</div><div class="kv" id="d-pax">0</div><div class="ks">/ 186 pr&eacute;vus</div></div>
+        <div class="kpi ko"><div class="kl">D&eacute;part</div><div class="kv">08:30</div><div class="ks" style="color:#6EE7B7">On Time</div></div>
+        <div class="kpi kr"><div class="kl">&Eacute;quipage</div><div class="kv">7</div><div class="ks">PNC confirm&eacute;s</div></div>
       </div>
       <div class="g2">
         <div class="card">
@@ -364,7 +364,7 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sa
           <div class="tl" id="d-tl"></div>
         </div>
         <div class="card">
-          <div class="card-t">Embarquement temps rÃ©el</div>
+          <div class="card-t">Embarquement temps r&eacute;el</div>
           <div class="bp-nums"><span class="bp-cur" id="bp-cur">0</span><span class="bp-sep">/</span><span class="bp-tot">186</span></div>
           <div class="bp-bar-w"><div class="bp-bar" id="bp-bar" style="width:0%"></div></div>
           <div class="bp-pct" id="bp-pct">0%</div>
@@ -379,13 +379,13 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sa
       </div>
       <div class="g2">
         <div class="card">
-          <div class="card-t">MÃ©tÃ©o rÃ©sumÃ©</div>
+          <div class="card-t">M&eacute;t&eacute;o r&eacute;sum&eacute;</div>
           <div style="display:flex;justify-content:space-around;text-align:center;margin-bottom:10px">
-            <div><div style="font-size:11px;color:var(--muted);font-weight:700">ALG</div><div style="font-size:32px"></div><div style="font-size:20px;font-weight:300">28Â°C</div></div>
+            <div><div style="font-size:11px;color:var(--muted);font-weight:700">ALG</div><div style="font-size:32px"></div><div style="font-size:20px;font-weight:300">28degC</div></div>
             <div style="color:var(--muted);font-size:22px;align-self:center">&rarr;</div>
-            <div><div style="font-size:11px;color:var(--muted);font-weight:700">CDG</div><div style="font-size:32px"></div><div style="font-size:20px;font-weight:300">18Â°C</div></div>
+            <div><div style="font-size:11px;color:var(--muted);font-weight:700">CDG</div><div style="font-size:32px"></div><div style="font-size:20px;font-weight:300">18degC</div></div>
           </div>
-          <div style="background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);border-radius:7px;padding:7px 10px;font-size:12px;color:#FCD34D">Turbulences lÃ©gÃ¨res FL350-FL380 Â· MÃ©diterranÃ©e</div>
+          <div style="background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);border-radius:7px;padding:7px 10px;font-size:12px;color:#FCD34D">Turbulences l&eacute;g&egrave;res FL350-FL380 - M&eacute;diterran&eacute;e</div>
         </div>
         <div class="card">
           <div class="card-t">Catering</div>
@@ -400,32 +400,32 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sa
       <div class="card">
         <div class="card-t">Informations de vol</div>
         <div class="ig">
-          <div class="ig-item"><div class="ig-label">NÂ° de vol</div><div class="ig-val">AH 7101</div></div>
-          <div class="ig-item"><div class="ig-label">DÃ©part</div><div class="ig-val">ALG</div></div>
+          <div class="ig-item"><div class="ig-label">Ndeg de vol</div><div class="ig-val">AH 7101</div></div>
+          <div class="ig-item"><div class="ig-label">D&eacute;part</div><div class="ig-val">ALG</div></div>
           <div class="ig-item"><div class="ig-label">Destination</div><div class="ig-val">CDG</div></div>
           <div class="ig-item"><div class="ig-label">STD</div><div class="ig-val">08:30 UTC</div></div>
           <div class="ig-item"><div class="ig-label">STA</div><div class="ig-val">10:50 UTC</div></div>
-          <div class="ig-item"><div class="ig-label">DurÃ©e</div><div class="ig-val">2h20</div></div>
+          <div class="ig-item"><div class="ig-label">Dur&eacute;e</div><div class="ig-val">2h20</div></div>
           <div class="ig-item"><div class="ig-label">Escale</div><div class="ig-val">Aucune</div></div>
           <div class="ig-item"><div class="ig-label">Statut</div><div class="ig-val"><span class="badge bg">On Time</span></div></div>
         </div>
       </div>
       <div class="card">
-        <div class="card-t">Avion â Boeing 737-800</div>
+        <div class="card-t">Avion - Boeing 737-800</div>
         <div class="ig">
           <div class="ig-item"><div class="ig-label">Type</div><div class="ig-val">Boeing 737-800</div></div>
           <div class="ig-item"><div class="ig-label">Immatriculation</div><div class="ig-val">7T-VKA</div></div>
           <div class="ig-item"><div class="ig-label">Configuration</div><div class="ig-val">Y186</div></div>
           <div class="ig-item"><div class="ig-label">Portes</div><div class="ig-val">L1 L2 R1 R2</div></div>
-          <div class="ig-item"><div class="ig-label">Sorties secours</div><div class="ig-val">8 (4ÃOWE)</div></div>
-          <div class="ig-item"><div class="ig-label">IFE</div><div class="ig-val">Ãcrans indiv.</div></div>
+          <div class="ig-item"><div class="ig-label">Sorties secours</div><div class="ig-val">8 (4xOWE)</div></div>
+          <div class="ig-item"><div class="ig-label">IFE</div><div class="ig-val">&Eacute;crans indiv.</div></div>
         </div>
         <div style="margin-top:12px">
-          <div style="font-size:11px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;letter-spacing:.8px">Ãquipements de bord</div>
+          <div style="font-size:11px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;letter-spacing:.8px">&Eacute;quipements de bord</div>
           <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px">
-            <div style="background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.2);border-radius:7px;padding:9px;text-align:center;font-size:11px;color:#6EE7B7">Kit mÃ©dical</div>
+            <div style="background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.2);border-radius:7px;padding:9px;text-align:center;font-size:11px;color:#6EE7B7">Kit m&eacute;dical</div>
             <div style="background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.2);border-radius:7px;padding:9px;text-align:center;font-size:11px;color:#6EE7B7">DEA</div>
-            <div style="background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.2);border-radius:7px;padding:9px;text-align:center;font-size:11px;color:#6EE7B7">OxygÃ¨ne</div>
+            <div style="background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.2);border-radius:7px;padding:9px;text-align:center;font-size:11px;color:#6EE7B7">Oxyg&egrave;ne</div>
             <div style="background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.2);border-radius:7px;padding:9px;text-align:center;font-size:11px;color:#6EE7B7">Extincteurs</div>
           </div>
         </div>
@@ -434,12 +434,12 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sa
 
     <!-- EQUIPAGE -->
     <div class="sc" id="sc-equipage">
-      <div class="pg-title"> Ãquipage</div>
+      <div class="pg-title"> &Eacute;quipage</div>
       <div class="card" style="border-color:rgba(200,146,42,.4)">
         <div class="card-t">Commandant de Bord</div>
         <div class="crew-row">
           <div class="crew-av" style="background:rgba(200,146,42,.2);color:var(--gold);font-size:18px"></div>
-          <div class="crew-info"><div class="crew-name">Cpt. Nadir BENALI</div><div class="crew-role">Commandant de Bord</div><div class="crew-meta">MAT-CDB-00421 Â· +213 770 421 000</div></div>
+          <div class="crew-info"><div class="crew-name">Cpt. Nadir BENALI</div><div class="crew-role">Commandant de Bord</div><div class="crew-meta">MAT-CDB-00421 - +213 770 421 000</div></div>
           <span class="badge bo">CDB</span>
         </div>
       </div>
@@ -448,7 +448,7 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sa
         <div id="pnc-list"></div>
       </div>
       <div class="card">
-        <div class="card-t">DÃ©claration GÃ©nÃ©rale NumÃ©rique</div>
+        <div class="card-t">D&eacute;claration G&eacute;n&eacute;rale Num&eacute;rique</div>
         <div id="decl-gen"></div>
         <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap">
           <button class="btn btn-g btn-sm" onclick="showToast(' Impression en cours...','gold')">Imprimer</button>
@@ -461,7 +461,7 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sa
     <div class="sc" id="sc-pax">
       <div class="pg-title">Passagers</div>
       <div class="tabs">
-        <button class="tab active" onclick="switchTab('pax-ov',this)">Vue gÃ©nÃ©rale</button>
+        <button class="tab active" onclick="switchTab('pax-ov',this)">Vue g&eacute;n&eacute;rale</button>
         <button class="tab" onclick="switchTab('pax-seat',this)">Seating</button>
         <button class="tab" onclick="switchTab('pax-sp',this)">Assistance <span class="badge br" style="font-size:9px">5</span></button>
         <button class="tab" onclick="switchTab('pax-pil',this)">PIL</button>
@@ -469,21 +469,21 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sa
 
       <div class="tab-c active" id="pax-ov">
         <div class="g4">
-          <div class="kpi ko"><div class="kl">PrÃ©vu</div><div class="kv">186</div><div class="ks">Total</div></div>
-          <div class="kpi kg"><div class="kl">EmbarquÃ©s</div><div class="kv" id="pax-emb">0</div><div class="ks">Temps rÃ©el</div></div>
-          <div class="kpi kb"><div class="kl">BÃ©bÃ©s INF</div><div class="kv">3</div><div class="ks">0-24 mois</div></div>
-          <div class="kpi kr"><div class="kl">Assistance</div><div class="kv">5</div><div class="ks">SpÃ©ciale</div></div>
+          <div class="kpi ko"><div class="kl">Pr&eacute;vu</div><div class="kv">186</div><div class="ks">Total</div></div>
+          <div class="kpi kg"><div class="kl">Embarqu&eacute;s</div><div class="kv" id="pax-emb">0</div><div class="ks">Temps r&eacute;el</div></div>
+          <div class="kpi kb"><div class="kl">B&eacute;b&eacute;s INF</div><div class="kv">3</div><div class="ks">0-24 mois</div></div>
+          <div class="kpi kr"><div class="kl">Assistance</div><div class="kv">5</div><div class="ks">Sp&eacute;ciale</div></div>
         </div>
         <div class="card">
           <div class="card-t">Passagers VIP</div>
-          <div class="vip-item"><div class="vip-badge">VIP</div><div style="flex:1"><div style="font-weight:600;font-size:13px">M. IBRAHIM Sofiane</div><div style="font-size:11px;color:var(--muted)">SiÃ¨ge 2A Â· PremiÃ¨re</div></div><span class="badge bo">Protocole</span></div>
-          <div class="vip-item"><div class="vip-badge" style="background:var(--blue);color:white">DIPL</div><div style="flex:1"><div style="font-weight:600;font-size:13px">Mme. RAHMANI LeÃ¯la</div><div style="font-size:11px;color:var(--muted)">SiÃ¨ge 1A Â· PremiÃ¨re</div></div><span class="badge bb">Diplomatique</span></div>
+          <div class="vip-item"><div class="vip-badge">VIP</div><div style="flex:1"><div style="font-weight:600;font-size:13px">M. IBRAHIM Sofiane</div><div style="font-size:11px;color:var(--muted)">Si&egrave;ge 2A - Premi&egrave;re</div></div><span class="badge bo">Protocole</span></div>
+          <div class="vip-item"><div class="vip-badge" style="background:var(--blue);color:white">DIPL</div><div style="flex:1"><div style="font-weight:600;font-size:13px">Mme. RAHMANI Le&iuml;la</div><div style="font-size:11px;color:var(--muted)">Si&egrave;ge 1A - Premi&egrave;re</div></div><span class="badge bb">Diplomatique</span></div>
         </div>
         <div class="card">
-          <div class="card-t">Animaux Ã  bord</div>
+          <div class="card-t">Animaux &agrave; bord</div>
           <div style="display:flex;align-items:center;gap:10px;padding:10px;background:rgba(245,158,11,.06);border:1px solid rgba(245,158,11,.2);border-radius:8px">
             <span style="font-size:24px"></span>
-            <div style="flex:1"><div style="font-size:13px;font-weight:600">1 chien (10kg) â Cabine</div><div style="font-size:11px;color:var(--muted)">PropriÃ©taire: SiÃ¨ge 15C Â· Cage IATA conforme</div></div>
+            <div style="flex:1"><div style="font-size:13px;font-weight:600">1 chien (10kg) - Cabine</div><div style="font-size:11px;color:var(--muted)">Propri&eacute;taire: Si&egrave;ge 15C - Cage IATA conforme</div></div>
             <span class="badge bg">OK</span>
           </div>
         </div>
@@ -493,11 +493,11 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sa
         <div class="card">
           <div class="card-t">Plan de cabine interactif</div>
           <div class="seat-legend">
-            <span><span class="sl-dot s-occ"></span>OccupÃ©</span>
+            <span><span class="sl-dot s-occ"></span>Occup&eacute;</span>
             <span><span class="sl-dot s-free"></span>Libre</span>
             <span><span class="sl-dot s-sp"></span>Assistance</span>
             <span><span class="sl-dot s-vip"></span>VIP</span>
-            <span><span class="sl-dot s-baby"></span>BÃ©bÃ©</span>
+            <span><span class="sl-dot s-baby"></span>B&eacute;b&eacute;</span>
           </div>
           <div style="overflow-x:auto"><div id="seat-map"></div></div>
         </div>
@@ -505,17 +505,17 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sa
 
       <div class="tab-c" id="pax-sp">
         <div class="card">
-          <div class="card-t">Passagers nÃ©cessitant assistance</div>
+          <div class="card-t">Passagers n&eacute;cessitant assistance</div>
           <div id="sp-pax-list"></div>
         </div>
       </div>
 
       <div class="tab-c" id="pax-pil">
         <div class="card">
-          <div class="card-t">PIL â Passenger Information List
+          <div class="card-t">PIL - Passenger Information List
             <input type="text" id="pil-srch" placeholder="Rechercher..." oninput="filterPIL(this.value)" style="margin-left:auto;background:rgba(255,255,255,.08);border:1px solid var(--border);border-radius:6px;color:#fff;padding:5px 10px;font-size:12px;outline:none;width:150px">
           </div>
-          <div style="overflow-x:auto"><table class="pil-table"><thead><tr><th>#</th><th>Nom PrÃ©nom</th><th>SiÃ¨ge</th><th>Type</th><th>SpÃ©cial</th></tr></thead><tbody id="pil-body"></tbody></table></div>
+          <div style="overflow-x:auto"><table class="pil-table"><thead><tr><th>#</th><th>Nom Pr&eacute;nom</th><th>Si&egrave;ge</th><th>Type</th><th>Sp&eacute;cial</th></tr></thead><tbody id="pil-body"></tbody></table></div>
         </div>
       </div>
     </div>
@@ -526,15 +526,15 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sa
       <div class="card">
         <div class="card-t">Fournisseur & Service</div>
         <div class="ig">
-          <div class="ig-item"><div class="ig-label">Fournisseur</div><div class="ig-val">LSG Sky Chefs AlgÃ©rie</div></div>
+          <div class="ig-item"><div class="ig-label">Fournisseur</div><div class="ig-val">LSG Sky Chefs Alg&eacute;rie</div></div>
           <div class="ig-item"><div class="ig-label">Type service</div><div class="ig-val">Repas chauds + collation</div></div>
           <div class="ig-item"><div class="ig-label">Bon livraison</div><div class="ig-val">ALG-2025-7101</div></div>
-          <div class="ig-item"><div class="ig-label">Statut</div><div class="ig-val"><span class="badge bg">ValidÃ©</span></div></div>
+          <div class="ig-item"><div class="ig-label">Statut</div><div class="ig-val"><span class="badge bg">Valid&eacute;</span></div></div>
         </div>
       </div>
       <div class="card">
         <div class="card-t">Inventaire</div>
-        <div class="cat-hdr"><span>Prestation</span><span>Requis</span><span>ChargÃ©</span><span>Statut</span></div>
+        <div class="cat-hdr"><span>Prestation</span><span>Requis</span><span>Charg&eacute;</span><span>Statut</span></div>
         <div id="cat-list"></div>
         <div style="display:flex;align-items:center;gap:10px;margin-top:12px;padding-top:10px;border-top:1px solid var(--border);flex-wrap:wrap">
           <button class="btn btn-g btn-sm" onclick="valCat()">Valider inventaire</button>
@@ -549,59 +549,59 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sa
 
     <!-- METEO -->
     <div class="sc" id="sc-meteo">
-      <div class="pg-title">MÃ©tÃ©orologie</div>
+      <div class="pg-title">M&eacute;t&eacute;orologie</div>
       <div class="g2">
         <div class="card">
-          <div style="font-size:11px;font-weight:700;text-transform:uppercase;color:var(--muted);margin-bottom:10px;letter-spacing:1px">Alger â ALG</div>
-          <div class="wc-main"><div style="font-size:44px"></div><div><div class="wc-temp">28Â°C</div><div class="wc-desc">EnsoleillÃ© Â· 42%</div></div></div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;color:var(--muted);margin-bottom:10px;letter-spacing:1px">Alger - ALG</div>
+          <div class="wc-main"><div style="font-size:44px"></div><div><div class="wc-temp">28degC</div><div class="wc-desc">Ensoleill&eacute; - 42%</div></div></div>
           <div class="wc-grid">
-            <div class="wc-item"><div class="wc-label">Vent</div><div class="wc-val">12 kt / 270Â°</div></div>
-            <div class="wc-item"><div class="wc-label">VisibilitÃ©</div><div class="wc-val">&gt;10 km</div></div>
+            <div class="wc-item"><div class="wc-label">Vent</div><div class="wc-val">12 kt / 270deg</div></div>
+            <div class="wc-item"><div class="wc-label">Visibilit&eacute;</div><div class="wc-val">&gt;10 km</div></div>
             <div class="wc-item"><div class="wc-label">QNH</div><div class="wc-val">1018 hPa</div></div>
             <div class="wc-item"><div class="wc-label">METAR</div><div class="wc-val">CAVOK</div></div>
           </div>
         </div>
         <div class="card">
           <div style="font-size:11px;font-weight:700;text-transform:uppercase;color:var(--muted);margin-bottom:10px;letter-spacing:1px">Paris CDG</div>
-          <div class="wc-main"><div style="font-size:44px"></div><div><div class="wc-temp">18Â°C</div><div class="wc-desc">Pluie lÃ©gÃ¨re Â· 76%</div></div></div>
+          <div class="wc-main"><div style="font-size:44px"></div><div><div class="wc-temp">18degC</div><div class="wc-desc">Pluie l&eacute;g&egrave;re - 76%</div></div></div>
           <div class="wc-grid">
-            <div class="wc-item"><div class="wc-label">Vent</div><div class="wc-val">18 kt / 240Â°</div></div>
-            <div class="wc-item"><div class="wc-label">VisibilitÃ©</div><div class="wc-val">6 km</div></div>
+            <div class="wc-item"><div class="wc-label">Vent</div><div class="wc-val">18 kt / 240deg</div></div>
+            <div class="wc-item"><div class="wc-label">Visibilit&eacute;</div><div class="wc-val">6 km</div></div>
             <div class="wc-item"><div class="wc-label">QNH</div><div class="wc-val">1009 hPa</div></div>
             <div class="wc-item"><div class="wc-label">Nuages</div><div class="wc-val">BKN 1200ft</div></div>
           </div>
         </div>
       </div>
       <div class="card">
-        <div class="card-t">En route â FL350</div>
+        <div class="card-t">En route - FL350</div>
         <div class="g4">
-          <div class="kpi kb"><div class="kl">Altitude</div><div class="kv" style="font-size:16px">FL350</div><div class="ks">-58Â°C ext.</div></div>
-          <div class="kpi kg"><div class="kl">Turbulences</div><div class="kv" style="font-size:14px">LÃ©gÃ¨res</div><div class="ks">FL330-FL380</div></div>
-          <div class="kpi ko"><div class="kl">Vent croisiÃ¨re</div><div class="kv" style="font-size:16px">72 kt</div><div class="ks">270Â°</div></div>
+          <div class="kpi kb"><div class="kl">Altitude</div><div class="kv" style="font-size:16px">FL350</div><div class="ks">-58degC ext.</div></div>
+          <div class="kpi kg"><div class="kl">Turbulences</div><div class="kv" style="font-size:14px">L&eacute;g&egrave;res</div><div class="ks">FL330-FL380</div></div>
+          <div class="kpi ko"><div class="kl">Vent croisi&egrave;re</div><div class="kv" style="font-size:16px">72 kt</div><div class="ks">270deg</div></div>
           <div class="kpi kg"><div class="kl">SIGMET</div><div class="kv" style="font-size:14px">Aucun</div><div class="ks">Zone libre</div></div>
         </div>
-        <div style="background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);border-radius:8px;padding:10px 12px;font-size:12px;color:#FCD34D">Turbulences lÃ©gÃ¨res Ã  modÃ©rÃ©es au-dessus de la MÃ©diterranÃ©e. Ceintures conseillÃ©es pendant le service.</div>
+        <div style="background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);border-radius:8px;padding:10px 12px;font-size:12px;color:#FCD34D">Turbulences l&eacute;g&egrave;res &agrave; mod&eacute;r&eacute;es au-dessus de la M&eacute;diterran&eacute;e. Ceintures conseill&eacute;es pendant le service.</div>
       </div>
       <div class="card">
-        <div class="card-t">PrÃ©visions 6h</div>
+        <div class="card-t">Pr&eacute;visions 6h</div>
         <div class="fc-grid" id="fc-grid"></div>
       </div>
     </div>
 
     <!-- QUESTIONNAIRE -->
     <div class="sc" id="sc-quiz">
-      <div class="pg-title">Questionnaire SÃ©curitÃ©</div>
+      <div class="pg-title">Questionnaire S&eacute;curit&eacute;</div>
       <div id="quiz-start" class="card">
         <div style="text-align:center;padding:16px 0">
           <div style="font-size:52px;margin-bottom:10px"></div>
-          <h2 style="margin-bottom:8px">Test alÃ©atoire sÃ©curitÃ©</h2>
-          <p style="color:var(--muted);font-size:13px;margin-bottom:18px;line-height:1.6">Questions gÃ©nÃ©rÃ©es alÃ©atoirement sur les procÃ©dures de vol et de sÃ©curitÃ©.</p>
+          <h2 style="margin-bottom:8px">Test al&eacute;atoire s&eacute;curit&eacute;</h2>
+          <p style="color:var(--muted);font-size:13px;margin-bottom:18px;line-height:1.6">Questions g&eacute;n&eacute;r&eacute;es al&eacute;atoirement sur les proc&eacute;dures de vol et de s&eacute;curit&eacute;.</p>
           <div style="display:flex;justify-content:center;gap:20px;margin-bottom:20px">
             <div style="text-align:center"><div style="font-size:26px;font-weight:700;color:var(--gold2)">10</div><div style="font-size:11px;color:var(--muted)">Questions</div></div>
-            <div style="text-align:center"><div style="font-size:26px;font-weight:700;color:var(--gold2)">15 min</div><div style="font-size:11px;color:var(--muted)">DurÃ©e max</div></div>
+            <div style="text-align:center"><div style="font-size:26px;font-weight:700;color:var(--gold2)">15 min</div><div style="font-size:11px;color:var(--muted)">Dur&eacute;e max</div></div>
             <div style="text-align:center"><div style="font-size:26px;font-weight:700;color:var(--gold2)">70%</div><div style="font-size:11px;color:var(--muted)">Score requis</div></div>
           </div>
-          <button class="btn btn-g" onclick="startQuiz()" style="padding:12px 28px;font-size:14px">DÃ©marrer le test</button>
+          <button class="btn btn-g" onclick="startQuiz()" style="padding:12px 28px;font-size:14px">D&eacute;marrer le test</button>
         </div>
         <div style="border-top:1px solid var(--border);margin-top:16px;padding-top:14px">
           <div style="font-size:11px;text-transform:uppercase;color:var(--muted);margin-bottom:10px;letter-spacing:.8px">Historique</div>
@@ -617,7 +617,7 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sa
         <div class="quiz-q" id="q-text"></div>
         <div id="q-opts"></div>
         <div style="display:flex;justify-content:space-between;margin-top:8px">
-          <button class="btn btn-o btn-sm" onclick="prevQ()">&larr; PrÃ©cÃ©dent</button>
+          <button class="btn btn-o btn-sm" onclick="prevQ()">&larr; Pr&eacute;c&eacute;dent</button>
           <button class="btn btn-g btn-sm" onclick="nextQ()" id="q-next">Suivant &rarr;</button>
         </div>
       </div>
@@ -637,25 +637,25 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sa
     <div class="sc" id="sc-rapport">
       <div class="pg-title">Rapport de vol</div>
       <div class="card">
-        <div class="card-t">â¹ Informations gÃ©nÃ©rales</div>
+        <div class="card-t">&#8505; Informations g&eacute;n&eacute;rales</div>
         <div class="g2">
-          <div><label style="font-size:11px;color:var(--gold);text-transform:uppercase;letter-spacing:.8px;display:block;margin-bottom:5px">NÂ° de vol</label><input class="fi" value="AH 7101" readonly style="opacity:.7;margin:0"></div>
+          <div><label style="font-size:11px;color:var(--gold);text-transform:uppercase;letter-spacing:.8px;display:block;margin-bottom:5px">Ndeg de vol</label><input class="fi" value="AH 7101" readonly style="opacity:.7;margin:0"></div>
           <div><label style="font-size:11px;color:var(--gold);text-transform:uppercase;letter-spacing:.8px;display:block;margin-bottom:5px">Date</label><input class="fi" type="date" id="r-date" style="margin:0"></div>
           <div><label style="font-size:11px;color:var(--gold);text-transform:uppercase;letter-spacing:.8px;display:block;margin-bottom:5px">Trajet</label><input class="fi" value="ALG &mdash; CDG" readonly style="opacity:.7;margin:0"></div>
-          <div><label style="font-size:11px;color:var(--gold);text-transform:uppercase;letter-spacing:.8px;display:block;margin-bottom:5px">Appareil</label><input class="fi" value="B737-800 Â· 7T-VKA" readonly style="opacity:.7;margin:0"></div>
+          <div><label style="font-size:11px;color:var(--gold);text-transform:uppercase;letter-spacing:.8px;display:block;margin-bottom:5px">Appareil</label><input class="fi" value="B737-800 - 7T-VKA" readonly style="opacity:.7;margin:0"></div>
         </div>
       </div>
       <div class="card">
-        <div class="card-t">Passagers â Final</div>
+        <div class="card-t">Passagers - Final</div>
         <div class="g4">
-          <div><label style="font-size:11px;color:var(--gold);display:block;margin-bottom:4px">PrÃ©vu</label><input class="fi" value="186" style="margin:0;padding:8px"></div>
-          <div><label style="font-size:11px;color:var(--gold);display:block;margin-bottom:4px">EmbarquÃ©s</label><input class="fi" id="r-emb" value="0" style="margin:0;padding:8px"></div>
-          <div><label style="font-size:11px;color:var(--gold);display:block;margin-bottom:4px">BÃ©bÃ©s</label><input class="fi" value="3" style="margin:0;padding:8px"></div>
+          <div><label style="font-size:11px;color:var(--gold);display:block;margin-bottom:4px">Pr&eacute;vu</label><input class="fi" value="186" style="margin:0;padding:8px"></div>
+          <div><label style="font-size:11px;color:var(--gold);display:block;margin-bottom:4px">Embarqu&eacute;s</label><input class="fi" id="r-emb" value="0" style="margin:0;padding:8px"></div>
+          <div><label style="font-size:11px;color:var(--gold);display:block;margin-bottom:4px">B&eacute;b&eacute;s</label><input class="fi" value="3" style="margin:0;padding:8px"></div>
           <div><label style="font-size:11px;color:var(--gold);display:block;margin-bottom:4px">Noshow</label><input class="fi" id="r-ns" value="0" style="margin:0;padding:8px"></div>
         </div>
       </div>
       <div class="card">
-        <div class="card-t">Temps rÃ©els</div>
+        <div class="card-t">Temps r&eacute;els</div>
         <div class="g4">
           <div><label style="font-size:11px;color:var(--gold);display:block;margin-bottom:4px">ATD</label><input class="fi" type="time" value="08:35" style="margin:0;padding:8px"></div>
           <div><label style="font-size:11px;color:var(--gold);display:block;margin-bottom:4px">ATA</label><input class="fi" type="time" value="10:58" style="margin:0;padding:8px"></div>
@@ -666,13 +666,13 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sa
       <div class="card">
         <div class="card-t">Compte-rendu</div>
         <div style="margin-bottom:10px"><label style="font-size:11px;color:var(--gold);display:block;margin-bottom:5px">Service cabine</label>
-          <select class="fi" style="margin:0"><option>TrÃ¨s satisfaisant</option><option>Satisfaisant</option><option>Non satisfaisant</option></select>
+          <select class="fi" style="margin:0"><option>Tr&egrave;s satisfaisant</option><option>Satisfaisant</option><option>Non satisfaisant</option></select>
         </div>
         <div style="margin-bottom:10px"><label style="font-size:11px;color:var(--gold);display:block;margin-bottom:5px">Incidents</label>
           <select class="fi" style="margin:0"><option>Aucun incident</option><option>Incident mineur</option><option>Incident majeur</option></select>
         </div>
         <div><label style="font-size:11px;color:var(--gold);display:block;margin-bottom:5px">Observations CDC</label>
-          <textarea class="fi" rows="4" style="margin:0;resize:vertical">Vol opÃ©rÃ© sans incident majeur. Turbulences lÃ©gÃ¨res signalÃ©es FL350 sur 20 min.</textarea>
+          <textarea class="fi" rows="4" style="margin:0;resize:vertical">Vol op&eacute;r&eacute; sans incident majeur. Turbulences l&eacute;g&egrave;res signal&eacute;es FL350 sur 20 min.</textarea>
         </div>
       </div>
       <div class="card">
@@ -693,11 +693,11 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sa
     <div class="sc" id="sc-profil">
       <div class="pg-title">Mon Profil</div>
       <div class="card" style="border-color:rgba(59,130,246,.4)">
-        <div class="card-t" style="color:#60A5FA">Connexion eCrew â Air AlgÃ©rie</div>
-        <div id="ecrew-status" class="ecrew-disc" style="margin-bottom:12px;font-size:13px;font-weight:600"><span class="ecrew-dot"></span><span id="ecrew-label">Non connectÃ©</span></div>
+        <div class="card-t" style="color:#60A5FA">Connexion eCrew - Air Alg&eacute;rie</div>
+        <div id="ecrew-status" class="ecrew-disc" style="margin-bottom:12px;font-size:13px;font-weight:600"><span class="ecrew-dot"></span><span id="ecrew-label">Non connect&eacute;</span></div>
         <div class="g2">
           <div><label class="fl">Matricule eCrew</label><input class="fi" id="ec-u" placeholder="Votre matricule" style="margin:0"></div>
-          <div><label class="fl">Mot de passe eCrew</label><input class="fi" id="ec-p" type="password" placeholder="â¢â¢â¢â¢â¢â¢â¢â¢" style="margin:0"></div>
+          <div><label class="fl">Mot de passe eCrew</label><input class="fi" id="ec-p" type="password" placeholder="--------" style="margin:0"></div>
         </div>
         <div style="display:flex;gap:7px;flex-wrap:wrap;margin-top:10px">
           <button class="btn btn-g btn-sm" onclick="connectEcrew()">Se connecter</button>
@@ -707,17 +707,17 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sa
         <div id="ecrew-msg" style="display:none;margin-top:8px;font-size:12px"></div>
       </div>
       <div class="card">
-        <div class="card-t">IdentitÃ©</div>
+        <div class="card-t">Identit&eacute;</div>
         <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px">
           <div class="prof-av" id="prof-av" onclick="changePhoto()">SC<div class="prof-av-btn"></div></div>
           <div><div style="font-size:17px;font-weight:700" id="prof-name-d">Chef de Cabine</div><div style="font-size:12px;color:var(--gold)">Chef de Cabine</div><div style="font-size:12px;color:var(--muted)" id="prof-mat-d">PNC-00000</div></div>
         </div>
         <div class="g2">
           <div><label class="fl">Nom</label><input class="fi" id="p-nom" placeholder="NOM" style="margin-bottom:0"></div>
-          <div><label class="fl">PrÃ©nom</label><input class="fi" id="p-prenom" placeholder="PrÃ©nom" style="margin-bottom:0"></div>
+          <div><label class="fl">Pr&eacute;nom</label><input class="fi" id="p-prenom" placeholder="Pr&eacute;nom" style="margin-bottom:0"></div>
           <div><label class="fl">Matricule</label><input class="fi" id="p-mat" placeholder="PNC-XXXXX" style="margin-bottom:0"></div>
-          <div><label class="fl">RÃ´le</label><select class="fi" id="p-role" style="margin-bottom:0"><option>Chef de Cabine</option><option>PNC Senior</option><option>PNC</option><option>PNC Galley</option></select></div>
-          <div><label class="fl">TÃ©lÃ©phone PRO</label><input class="fi" id="p-tel" placeholder="+213 7XX XXX XXX" style="margin-bottom:0"></div>
+          <div><label class="fl">R&ocirc;le</label><select class="fi" id="p-role" style="margin-bottom:0"><option>Chef de Cabine</option><option>PNC Senior</option><option>PNC</option><option>PNC Galley</option></select></div>
+          <div><label class="fl">T&eacute;l&eacute;phone PRO</label><input class="fi" id="p-tel" placeholder="+213 7XX XXX XXX" style="margin-bottom:0"></div>
           <div><label class="fl">Email professionnel</label><input class="fi" id="p-email" placeholder="prenom.nom@airalgerie.dz" style="margin-bottom:0"></div>
         </div>
       </div>
@@ -725,16 +725,16 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sa
         <div class="card-t">Documents officiels</div>
         <div class="g2">
           <div><label class="fl">Qualification machine</label><input class="fi" id="p-qual" placeholder="B737/A330..." style="margin-bottom:0"></div>
-          <div><label class="fl">Zone assignÃ©e</label><input class="fi" id="p-zone" style="margin-bottom:0"></div>
-          <div><label class="fl">NÂ° CSS</label><input class="fi" id="p-css" style="margin-bottom:0"></div>
-          <div><label class="fl">ValiditÃ© CSS</label><input class="fi" id="p-cssv" placeholder="JJ/MM/AAAA" style="margin-bottom:0"></div>
-          <div><label class="fl">NÂ° Passeport</label><input class="fi" id="p-pass" style="margin-bottom:0"></div>
-          <div><label class="fl">ValiditÃ© Passeport</label><input class="fi" id="p-passv" placeholder="JJ/MM/AAAA" style="margin-bottom:0"></div>
+          <div><label class="fl">Zone assign&eacute;e</label><input class="fi" id="p-zone" style="margin-bottom:0"></div>
+          <div><label class="fl">Ndeg CSS</label><input class="fi" id="p-css" style="margin-bottom:0"></div>
+          <div><label class="fl">Validit&eacute; CSS</label><input class="fi" id="p-cssv" placeholder="JJ/MM/AAAA" style="margin-bottom:0"></div>
+          <div><label class="fl">Ndeg Passeport</label><input class="fi" id="p-pass" style="margin-bottom:0"></div>
+          <div><label class="fl">Validit&eacute; Passeport</label><input class="fi" id="p-passv" placeholder="JJ/MM/AAAA" style="margin-bottom:0"></div>
           <div style="grid-column:1/-1"><label class="fl">Visas disponibles</label><input class="fi" id="p-visa" placeholder="Schengen, USA, UK..." style="margin-bottom:0"></div>
         </div>
       </div>
       <div class="card">
-        <div class="card-t">ParamÃ¨tres vol</div>
+        <div class="card-t">Param&egrave;tres vol</div>
         <div class="g2">
           <div><label class="fl">Heure Check-in</label><input class="fi" type="time" id="p-ci" value="06:30" style="margin-bottom:0"></div>
           <div><label class="fl">Base</label><select class="fi" id="p-base" style="margin-bottom:0"><option>ALG</option><option>ORN</option><option>CZL</option><option>CDG</option></select></div>
@@ -754,7 +754,7 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sa
   <!-- Bottom Nav -->
   <nav class="bnav">
     <button class="bn active" onclick="goTo('dash',this)"><div class="bn-ic"></div>Accueil</button>
-    <button class="bn" onclick="goTo('equipage',this)"><div class="bn-ic"></div>Ãquipage</button>
+    <button class="bn" onclick="goTo('equipage',this)"><div class="bn-ic"></div>&Eacute;quipage</button>
     <button class="bn" onclick="goTo('pax',this)"><div class="bn-ic"></div>PAX</button>
     <button class="bn" onclick="goTo('catering',this)"><div class="bn-ic"></div>Catering</button>
     <button class="bn" onclick="goTo('profil',this)"><div class="bn-ic"></div>Profil</button>
@@ -767,7 +767,7 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sa
 <!-- PNC MODAL -->
 <div class="modal" id="pnc-modal">
   <div class="modal-box">
-    <div class="modal-hdr"><div class="modal-title" id="pnc-m-title">DÃ©tail PNC</div><button class="modal-close" onclick="closePNCModal()"></button></div>
+    <div class="modal-hdr"><div class="modal-title" id="pnc-m-title">D&eacute;tail PNC</div><button class="modal-close" onclick="closePNCModal()"></button></div>
     <div class="modal-body" id="pnc-m-body"></div>
   </div>
 </div>
@@ -775,80 +775,80 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sa
 <script>
 // ===== DATA =====
 var PNC_DATA = [
-  {id:"PNC-04882",nom:"CHÃNIER Sophie",role:"Chef de Cabine",zone:"CDC",qual:"B737/B767/A330",css:"CSS-2025-0441",cssv:"31/12/2025",tel:"+213 770 441 882",pass:"A12345678",passv:"15/06/2027",visa:"Schengen, USA, UK",ci:"06:30",accepte:false},
+  {id:"PNC-04882",nom:"CH&#201;NIER Sophie",role:"Chef de Cabine",zone:"CDC",qual:"B737/B767/A330",css:"CSS-2025-0441",cssv:"31/12/2025",tel:"+213 770 441 882",pass:"A12345678",passv:"15/06/2027",visa:"Schengen, USA, UK",ci:"06:30",accepte:false},
   {id:"PNC-03241",nom:"MARZALI Karim",role:"PNC Senior",zone:"Avant L1",qual:"B737/A330",css:"CSS-2025-0312",cssv:"30/09/2025",tel:"+213 770 312 241",pass:"B98765432",passv:"20/03/2026",visa:"Schengen",ci:"06:30",accepte:false},
   {id:"PNC-05510",nom:"LEBRUN Amira",role:"PNC",zone:"Centre G",qual:"B737",css:"CSS-2025-0551",cssv:"28/02/2026",tel:"+213 550 551 510",pass:"C11223344",passv:"08/11/2026",visa:"Schengen, USA",ci:"06:30",accepte:false},
-  {id:"PNC-02967",nom:"TRÃVIDIC Marc",role:"PNC",zone:"Centre D",qual:"B737/B767",css:"CSS-2025-0297",cssv:"15/10/2025",tel:"+213 661 297 967",pass:"D55667788",passv:"04/07/2027",visa:"Schengen",ci:"06:30",accepte:false},
-  {id:"PNC-06128",nom:"LAÃDI Farida",role:"PNC",zone:"ArriÃ¨re G",qual:"B737",css:"CSS-2025-0612",cssv:"31/08/2025",tel:"+213 770 612 128",pass:"E22334455",passv:"12/09/2025",visa:"Schengen",ci:"06:30",accepte:false},
-  {id:"PNC-04473",nom:"BOUCHARD Nicolas",role:"PNC",zone:"ArriÃ¨re D",qual:"B737/A330",css:"CSS-2025-0447",cssv:"28/11/2025",tel:"+213 550 447 473",pass:"F66778899",passv:"30/01/2027",visa:"Schengen, Canada",ci:"06:30",accepte:false},
-  {id:"PNC-07001",nom:"HARIRI InÃ¨s",role:"PNC Galley",zone:"Galley AR",qual:"B737",css:"CSS-2025-0700",cssv:"14/04/2026",tel:"+213 660 700 001",pass:"G33445566",passv:"22/08/2026",visa:"Schengen",ci:"06:30",accepte:false}
+  {id:"PNC-02967",nom:"TR&#201;VIDIC Marc",role:"PNC",zone:"Centre D",qual:"B737/B767",css:"CSS-2025-0297",cssv:"15/10/2025",tel:"+213 661 297 967",pass:"D55667788",passv:"04/07/2027",visa:"Schengen",ci:"06:30",accepte:false},
+  {id:"PNC-06128",nom:"LA&#207;DI Farida",role:"PNC",zone:"Arri&#232;re G",qual:"B737",css:"CSS-2025-0612",cssv:"31/08/2025",tel:"+213 770 612 128",pass:"E22334455",passv:"12/09/2025",visa:"Schengen",ci:"06:30",accepte:false},
+  {id:"PNC-04473",nom:"BOUCHARD Nicolas",role:"PNC",zone:"Arri&#232;re D",qual:"B737/A330",css:"CSS-2025-0447",cssv:"28/11/2025",tel:"+213 550 447 473",pass:"F66778899",passv:"30/01/2027",visa:"Schengen, Canada",ci:"06:30",accepte:false},
+  {id:"PNC-07001",nom:"HARIRI In&#232;s",role:"PNC Galley",zone:"Galley AR",qual:"B737",css:"CSS-2025-0700",cssv:"14/04/2026",tel:"+213 660 700 001",pass:"G33445566",passv:"22/08/2026",visa:"Schengen",ci:"06:30",accepte:false}
 ];
 
 var SP_PAX = [
   {nom:"MEZIANI Rachid",siege:"14C",code:"WCHR",label:"Fauteuil roulant",note:"Assistance ramp + embarquement prioritaire.",c:"blue"},
-  {nom:"GARCIA Sofia",siege:"22A",code:"UNAC",label:"Mineur non accompagnÃ©",note:"8 ans. Contact: +33 6 12 34 56 78 (mÃ¨re).",c:"amber"},
-  {nom:"BENMOUSSA Ali",siege:"31F",code:"SPML",label:"Allergie arachides",note:"Repas spÃ©cial chargÃ©. Ne pas distribuer cacahuÃ¨tes.",c:"red"},
-  {nom:"DUPONT Jean",siege:"07B",code:"DEAF",label:"Passager sourd",note:"Communication Ã©crite. Briefing individuel.",c:"blue"},
-  {nom:"AHMED Yasmine",siege:"18D",code:"BLND",label:"Passager malvoyant",note:"Chien guide autorisÃ©. Briefing oral individuel.",c:"green"}
+  {nom:"GARCIA Sofia",siege:"22A",code:"UNAC",label:"Mineur non accompagn&#233;",note:"8 ans. Contact: +33 6 12 34 56 78 (m&#232;re).",c:"amber"},
+  {nom:"BENMOUSSA Ali",siege:"31F",code:"SPML",label:"Allergie arachides",note:"Repas sp&#233;cial charg&#233;. Ne pas distribuer cacahu&#232;tes.",c:"red"},
+  {nom:"DUPONT Jean",siege:"07B",code:"DEAF",label:"Passager sourd",note:"Communication &#233;crite. Briefing individuel.",c:"blue"},
+  {nom:"AHMED Yasmine",siege:"18D",code:"BLND",label:"Passager malvoyant",note:"Chien guide autoris&#233;. Briefing oral individuel.",c:"green"}
 ];
 
 var CAT_DATA = [
-  {n:"Repas standard (Ã©co.)",d:"Poulet rÃ´ti ou pÃ¢tes",req:186,chg:190},
-  {n:"Repas vÃ©gÃ©tarien (VGML)",d:"LÃ©gumes grillÃ©s",req:12,chg:12},
-  {n:"Repas halal (MOML)",d:"CertifiÃ© halal",req:35,chg:36},
+  {n:"Repas standard (&#233;co.)",d:"Poulet r&#244;ti ou p&#226;tes",req:186,chg:190},
+  {n:"Repas v&#233;g&#233;tarien (VGML)",d:"L&#233;gumes grill&#233;s",req:12,chg:12},
+  {n:"Repas halal (MOML)",d:"Certifi&#233; halal",req:35,chg:36},
   {n:"Repas enfant (CHML)",d:"Menu enfant",req:8,chg:8},
   {n:"Repas allergie (SPML)",d:"Sans arachides",req:1,chg:2},
   {n:"Collation / snack",d:"Biscuits + boisson",req:200,chg:210}
 ];
 
 var DRINKS = [
-  {n:"Eau minÃ©rale",q:240,u:"0.33L",ic:""},
+  {n:"Eau min&#233;rale",q:240,u:"0.33L",ic:""},
   {n:"Jus de fruit",q:96,u:"briques",ic:""},
-  {n:"CafÃ© / ThÃ©",q:80,u:"portions",ic:""},
+  {n:"Caf&#233; / Th&#233;",q:80,u:"portions",ic:""},
   {n:"Sodas",q:72,u:"canettes",ic:""},
   {n:"Vin rouge",q:24,u:"mini-bout.",ic:""},
-  {n:"BiÃ¨re",q:30,u:"canettes",ic:""},
+  {n:"Bi&#232;re",q:30,u:"canettes",ic:""},
   {n:"Eau gazeuse",q:96,u:"0.25L",ic:""},
-  {n:"Lait bÃ©bÃ©",q:6,u:"briques",ic:""},
+  {n:"Lait b&#233;b&#233;",q:6,u:"briques",ic:""},
   {n:"Eau plate 1.5L",q:48,u:"bouteilles",ic:""}
 ];
 
 var MANUELS = [
-  {cat:" SÃ©curitÃ©",items:[
-    {t:"ISAP â ProcÃ©dures SÃ©curitÃ© Cabine B737",m:"RÃ©v.14 Â· Jan.2025 Â· 248p",s:"ok"},
-    {t:"CAMU â Manuel MÃ©dical Urgences",m:"RÃ©v.9 Â· Mar.2025 Â· 132p",s:"ok"},
-    {t:"Lutte Incendie â ProcÃ©dures B737",m:"RÃ©v.5 Â· DÃ©c.2024 Â· 64p",s:"ok"},
-    {t:"ProcÃ©dures Ãvacuation Urgence",m:"RÃ©v.6 Â· Avr.2025 Â· 88p",s:"ok"}
+  {cat:" S&#233;curit&#233;",items:[
+    {t:"ISAP &#8212; Proc&#233;dures S&#233;curit&#233; Cabine B737",m:"R&#233;v.14 &#183; Jan.2025 &#183; 248p",s:"ok"},
+    {t:"CAMU &#8212; Manuel M&#233;dical Urgences",m:"R&#233;v.9 &#183; Mar.2025 &#183; 132p",s:"ok"},
+    {t:"Lutte Incendie &#8212; Proc&#233;dures B737",m:"R&#233;v.5 &#183; D&#233;c.2024 &#183; 64p",s:"ok"},
+    {t:"Proc&#233;dures &#201;vacuation Urgence",m:"R&#233;v.6 &#183; Avr.2025 &#183; 88p",s:"ok"}
   ]},
   {cat:" Avion B737-800",items:[
-    {t:"CCFOM â Cabin Crew Flying Operations Manual",m:"B737 Â· RÃ©v.11 Â· FÃ©v.2025 Â· 520p",s:"ok"},
-    {t:"Configuration Cabine & Ãquipements B737",m:"RÃ©v.3 Â· Nov.2024 Â· 88p",s:"ok"}
+    {t:"CCFOM &#8212; Cabin Crew Flying Operations Manual",m:"B737 &#183; R&#233;v.11 &#183; F&#233;v.2025 &#183; 520p",s:"ok"},
+    {t:"Configuration Cabine & &#201;quipements B737",m:"R&#233;v.3 &#183; Nov.2024 &#183; 88p",s:"ok"}
   ]},
   {cat:" Service & Standards",items:[
-    {t:"Standards de Service Air AlgÃ©rie ÃtÃ© 2025",m:"Saison ÃtÃ© 2025 Â· 95p",s:"update"},
-    {t:"ProcÃ©dures Catering & AllergÃ¨nes",m:"RÃ©v.7 Â· Avr.2025 Â· 44p",s:"update"},
-    {t:"DiversitÃ© culturelle & Protocoles passagers",m:"RÃ©v.2 Â· Jan.2025 Â· 76p",s:"ok"}
+    {t:"Standards de Service Air Alg&#233;rie &#201;t&#233; 2025",m:"Saison &#201;t&#233; 2025 &#183; 95p",s:"update"},
+    {t:"Proc&#233;dures Catering & Allerg&#232;nes",m:"R&#233;v.7 &#183; Avr.2025 &#183; 44p",s:"update"},
+    {t:"Diversit&#233; culturelle & Protocoles passagers",m:"R&#233;v.2 &#183; Jan.2025 &#183; 76p",s:"ok"}
   ]},
-  {cat:" RÃ©glementaire",items:[
-    {t:"FTL â Temps de vol & repos AIRCREW",m:"DGSAC 2025 Â· 56p",s:"ok"},
-    {t:"ArrÃªtÃ© 09-265 â Normes PNC Air AlgÃ©rie",m:"MinistÃ¨re Transports Â· 40p",s:"ok"},
-    {t:"SMS â Manuel SÃ©curitÃ© Airline",m:"RÃ©v.4 Â· 2024 Â· 210p",s:"ok"}
+  {cat:" R&#233;glementaire",items:[
+    {t:"FTL &#8212; Temps de vol & repos AIRCREW",m:"DGSAC 2025 &#183; 56p",s:"ok"},
+    {t:"Arr&#234;t&#233; 09-265 &#8212; Normes PNC Air Alg&#233;rie",m:"Minist&#232;re Transports &#183; 40p",s:"ok"},
+    {t:"SMS &#8212; Manuel S&#233;curit&#233; Airline",m:"R&#233;v.4 &#183; 2024 &#183; 210p",s:"ok"}
   ]}
 ];
 
 var QUIZ_Q = [
-  {q:"En cas de dÃ©pressurisation, les masques Ã  oxygÃ¨ne se dÃ©ploient Ã  quelle altitude pression?",opts:["10 000 ft","14 000 ft","16 000 ft","18 000 ft"],correct:1,expl:"Les masques se dÃ©ploient automatiquement Ã  14 000 ft de pression altitude."},
-  {q:"Quel signal sonore indique que les ceintures doivent Ãªtre attachÃ©es?",opts:["3 coups","1 coup","2 coups","Annonce PA uniquement"],correct:2,expl:"2 coups de sonnette = ceintures. ProcÃ©dure standard Air AlgÃ©rie."},
-  {q:"Lors d'une Ã©vacuation d'urgence, le premier geste du PNC Ã  sa porte est:",opts:["Ouvrir la porte","VÃ©rifier l'extÃ©rieur","DÃ©sarmer la toboggan","Annoncer Evacuate"],correct:1,expl:"VÃRIFIER l'extÃ©rieur avant d'ouvrir. Ãvite d'envoyer les passagers vers un danger."},
-  {q:"La durÃ©e d'utilisation d'un extincteur BCF en cabine est:",opts:["5 secondes","10-15 secondes","30 secondes","1 minute"],correct:1,expl:"Un extincteur BCF B737 offre 10-15 secondes. Utiliser en rafales courtes."},
-  {q:"Qu'est-ce qu'un passager INAD?",opts:["Passager invalide","Passager inadmissible renvoyÃ©","Passager sans billet","Passager ivre"],correct:1,expl:"INAD = INADmissible. Passager refoulÃ© par le pays de destination."},
-  {q:"La procÃ©dure PASS pour un extincteur signifie:",opts:["Pull, Aim, Squeeze, Sweep","Push, Aim, Start, Spray","Pull, Attack, Spray, Stop","Prepare, Aim, Squeeze, Spray"],correct:0,expl:"PASS: Pull (dÃ©goupiller), Aim (viser la base), Squeeze (actionner), Sweep (balayer)."},
-  {q:"Combien de sorties de secours possÃ¨de un Boeing 737-800?",opts:["4 sorties","6 sorties","8 sorties","10 sorties"],correct:2,expl:"Le B737-800 dispose de 8 sorties: 2 portes avant, 2 arriÃ¨re, 4 OWE."},
-  {q:"En cas de choc anaphylactique, la premiÃ¨re action est:",opts:["Appeler un mÃ©decin","Administrer l'EpiPen","PrÃ©venir le CDB","Antihistaminiques oraux"],correct:1,expl:"L'ÃPINÃPHRINE (EpiPen) est le traitement de 1Ã¨re ligne IMMÃDIAT."},
-  {q:"Le code WCHR signifie que le passager:",opts:["Peut marcher courtes distances","Est totalement immobilisÃ©","Ne peut pas monter les escaliers","NÃ©cessite un brancard"],correct:0,expl:"WCHR: peut marcher courtes distances mais besoin fauteuil pour l'aÃ©rogare."},
-  {q:"La position brace est adoptÃ©e:",opts:["DÃ¨s le dÃ©collage","Sur ordre CDB uniquement","Ã <1000ft sur instruction","Lors de toute turbulence"],correct:2,expl:"La brace est ordonnÃ©e par le CDB via PA lors d'une urgence Ã  l'atterrissage."},
-  {q:"En cas de fumÃ©e dans une soute, la procÃ©dure est:",opts:["Ouvrir la trappe","Alerter CDB + extincteur","Alerter CDB, NE PAS ouvrir","Informer les passagers"],correct:2,expl:"NE JAMAIS ouvrir. L'apport d'oxygÃ¨ne aggraverait l'incendie. Alerter le CDB."},
-  {q:"Le DEA doit Ãªtre utilisÃ©:",opts:["AprÃ¨s 5 min de RCP","DÃ¨s que possible","Seulement par mÃ©decin","Si patient inconscient"],correct:1,expl:"Utiliser DÃS QUE POSSIBLE. La dÃ©fibrillation prÃ©coce est le facteur NÂ°1 de survie."}
+  {q:"En cas de d&#233;pressurisation, les masques &#224; oxyg&#232;ne se d&#233;ploient &#224; quelle altitude pression?",opts:["10 000 ft","14 000 ft","16 000 ft","18 000 ft"],correct:1,expl:"Les masques se d&#233;ploient automatiquement &#224; 14 000 ft de pression altitude."},
+  {q:"Quel signal sonore indique que les ceintures doivent &#234;tre attach&#233;es?",opts:["3 coups","1 coup","2 coups","Annonce PA uniquement"],correct:2,expl:"2 coups de sonnette = ceintures. Proc&#233;dure standard Air Alg&#233;rie."},
+  {q:"Lors d'une &#233;vacuation d'urgence, le premier geste du PNC &#224; sa porte est:",opts:["Ouvrir la porte","V&#233;rifier l'ext&#233;rieur","D&#233;sarmer la toboggan","Annoncer Evacuate"],correct:1,expl:"V&#201;RIFIER l'ext&#233;rieur avant d'ouvrir. &#201;vite d'envoyer les passagers vers un danger."},
+  {q:"La dur&#233;e d'utilisation d'un extincteur BCF en cabine est:",opts:["5 secondes","10-15 secondes","30 secondes","1 minute"],correct:1,expl:"Un extincteur BCF B737 offre 10-15 secondes. Utiliser en rafales courtes."},
+  {q:"Qu'est-ce qu'un passager INAD?",opts:["Passager invalide","Passager inadmissible renvoy&#233;","Passager sans billet","Passager ivre"],correct:1,expl:"INAD = INADmissible. Passager refoul&#233; par le pays de destination."},
+  {q:"La proc&#233;dure PASS pour un extincteur signifie:",opts:["Pull, Aim, Squeeze, Sweep","Push, Aim, Start, Spray","Pull, Attack, Spray, Stop","Prepare, Aim, Squeeze, Spray"],correct:0,expl:"PASS: Pull (d&#233;goupiller), Aim (viser la base), Squeeze (actionner), Sweep (balayer)."},
+  {q:"Combien de sorties de secours poss&#232;de un Boeing 737-800?",opts:["4 sorties","6 sorties","8 sorties","10 sorties"],correct:2,expl:"Le B737-800 dispose de 8 sorties: 2 portes avant, 2 arri&#232;re, 4 OWE."},
+  {q:"En cas de choc anaphylactique, la premi&#232;re action est:",opts:["Appeler un m&#233;decin","Administrer l'EpiPen","Pr&#233;venir le CDB","Antihistaminiques oraux"],correct:1,expl:"L'&#201;PIN&#201;PHRINE (EpiPen) est le traitement de 1&#232;re ligne IMM&#201;DIAT."},
+  {q:"Le code WCHR signifie que le passager:",opts:["Peut marcher courtes distances","Est totalement immobilis&#233;","Ne peut pas monter les escaliers","N&#233;cessite un brancard"],correct:0,expl:"WCHR: peut marcher courtes distances mais besoin fauteuil pour l'a&#233;rogare."},
+  {q:"La position brace est adopt&#233;e:",opts:["D&#232;s le d&#233;collage","Sur ordre CDB uniquement","&#192; <1000ft sur instruction","Lors de toute turbulence"],correct:2,expl:"La brace est ordonn&#233;e par le CDB via PA lors d'une urgence &#224; l'atterrissage."},
+  {q:"En cas de fum&#233;e dans une soute, la proc&#233;dure est:",opts:["Ouvrir la trappe","Alerter CDB + extincteur","Alerter CDB, NE PAS ouvrir","Informer les passagers"],correct:2,expl:"NE JAMAIS ouvrir. L'apport d'oxyg&#232;ne aggraverait l'incendie. Alerter le CDB."},
+  {q:"Le DEA doit &#234;tre utilis&#233;:",opts:["Apr&#232;s 5 min de RCP","D&#232;s que possible","Seulement par m&#233;decin","Si patient inconscient"],correct:1,expl:"Utiliser D&#200;S QUE POSSIBLE. La d&#233;fibrillation pr&#233;coce est le facteur N&#176;1 de survie."}
 ];
 
 // ===== STATE =====
@@ -1000,14 +1000,14 @@ function initApp(){
 // ===== TIMELINE =====
 function renderTimeline(){
   var items=[
-    {t:"05:00",title:"Check-in Ã©quipage",sub:"Centre opÃ©rationnel ALG",done:true},
-    {t:"06:00",title:"Briefing prÃ©-vol",sub:"CDB + CDC Â· MÃ©tÃ©o, consignes",done:true},
-    {t:"07:00",title:"Chargement catering",sub:"LSG Sky Chefs â ValidÃ©",done:true},
-    {t:"07:30",title:"Embarquement ouvert",sub:"Portes L1 Â· L2 Â· R1 Â· R2",done:true},
-    {t:"08:15",title:"Portes fermÃ©es",sub:"DÃ©mo sÃ©curitÃ© effectuÃ©e",done:false,cur:true},
-    {t:"08:30",title:"DÃ©collage prÃ©vu",sub:"Piste 09R Â· ALG",done:false},
-    {t:"09:30",title:"Service repas",sub:"Toutes rangÃ©es",done:false},
-    {t:"10:50",title:"Atterrissage CDG",sub:"Terminal 2F Â· Paris CDG",done:false}
+    {t:"05:00",title:"Check-in &#233;quipage",sub:"Centre op&#233;rationnel ALG",done:true},
+    {t:"06:00",title:"Briefing pr&#233;-vol",sub:"CDB + CDC &#183; M&#233;t&#233;o, consignes",done:true},
+    {t:"07:00",title:"Chargement catering",sub:"LSG Sky Chefs &#8212; Valid&#233;",done:true},
+    {t:"07:30",title:"Embarquement ouvert",sub:"Portes L1 &#183; L2 &#183; R1 &#183; R2",done:true},
+    {t:"08:15",title:"Portes ferm&#233;es",sub:"D&#233;mo s&#233;curit&#233; effectu&#233;e",done:false,cur:true},
+    {t:"08:30",title:"D&#233;collage pr&#233;vu",sub:"Piste 09R &#183; ALG",done:false},
+    {t:"09:30",title:"Service repas",sub:"Toutes rang&#233;es",done:false},
+    {t:"10:50",title:"Atterrissage CDG",sub:"Terminal 2F &#183; Paris CDG",done:false}
   ];
   var el=document.getElementById('d-tl');
   if(!el)return;
@@ -1035,9 +1035,9 @@ function finalPAX(){
   var ns=BP_TOTAL-S.bp;
   var el=document.getElementById('final-pax');
   el.style.display='block';
-  el.textContent=' FINAL PAX: '+S.bp+' embarquÃ©s'+(ns>0?' Â· '+ns+' no-show':'Â· Vol complet');
+  el.textContent=' FINAL PAX: '+S.bp+' embarqu&#233;s'+(ns>0?' &#183; '+ns+' no-show':'&#183; Vol complet');
   var rns=document.getElementById('r-ns');if(rns)rns.value=ns;
-  showToast(' Final PAX validÃ©: '+S.bp,'green');
+  showToast(' Final PAX valid&#233;: '+S.bp,'green');
 }
 function resetBP(){S.bp=0;S.bpFinal=false;document.getElementById('final-pax').style.display='none';updBP();}
 
@@ -1058,27 +1058,27 @@ function renderPNCList(){
     var ini=p.nom.split(' ').map(function(n){return n[0]}).join('').slice(0,2);
     return '<div class="crew-row" style="cursor:pointer" onclick="showPNCModal('+i+')">'
       +'<div class="crew-av" style="background:'+colors[i%colors.length]+'22;color:'+colors[i%colors.length]+'">'+ini+'</div>'
-      +'<div class="crew-info"><div class="crew-name">'+p.nom+(S.user&&p.id===S.user.id?' <span style="font-size:10px;color:var(--gold)">â Vous</span>':'')+'</div>'
-      +'<div class="crew-role">'+p.role+'</div><div class="crew-meta">Zone: '+p.zone+' Â· '+p.qual+'</div></div>'
+      +'<div class="crew-info"><div class="crew-name">'+p.nom+(S.user&&p.id===S.user.id?' <span style="font-size:10px;color:var(--gold)">&#9679; Vous</span>':'')+'</div>'
+      +'<div class="crew-role">'+p.role+'</div><div class="crew-meta">Zone: '+p.zone+' &#183; '+p.qual+'</div></div>'
       +'<div style="display:flex;flex-direction:column;gap:5px;align-items:flex-end">'
-      +'<span class="badge bg" style="font-size:10px">â Service</span>'
+      +'<span class="badge bg" style="font-size:10px">&#9679; Service</span>'
       +'<span class="badge bb" style="font-size:10px">'+p.ci+' UTC</span>'
-      +(p.accepte?'<span class="badge bg" style="font-size:10px">AcceptÃ©</span>':'<button class="btn btn-sm" style="background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.3);color:#6EE7B7;font-size:10px;padding:3px 8px" onclick="event.stopPropagation();acceptPNC('+i+',this)">Accepter</button>')
+      +(p.accepte?'<span class="badge bg" style="font-size:10px">Accept&#233;</span>':'<button class="btn btn-sm" style="background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.3);color:#6EE7B7;font-size:10px;padding:3px 8px" onclick="event.stopPropagation();acceptPNC('+i+',this)">Accepter</button>')
       +'</div></div>';
   }).join('');
 }
 
 function acceptPNC(i,btn){
   PNC_DATA[i].accepte=true;
-  btn.outerHTML='<span class="badge bg" style="font-size:10px">AcceptÃ©</span>';
+  btn.outerHTML='<span class="badge bg" style="font-size:10px">Accept&#233;</span>';
   renderDeclGen();
-  showToast(' '+PNC_DATA[i].nom+' a acceptÃ© le vol','green');
+  showToast(' '+PNC_DATA[i].nom+' a accept&#233; le vol','green');
 }
 
 function showPNCModal(i){
   var p=PNC_DATA[i];
   document.getElementById('pnc-m-title').textContent=p.nom;
-  var rows=[['Matricule',p.id],['RÃ´le',p.role],['Zone',p.zone],['Qualification',p.qual],['NÂ° CSS',p.css],['ValiditÃ© CSS',p.cssv],['TÃ©lÃ©phone PRO',p.tel],['NÂ° Passeport',p.pass],['ValiditÃ© Passeport',p.passv],['Visas',p.visa],['Check-in',p.ci+' UTC'],['Statut',p.accepte?' AcceptÃ©':' En attente']];
+  var rows=[['Matricule',p.id],['R&#244;le',p.role],['Zone',p.zone],['Qualification',p.qual],['N&#176; CSS',p.css],['Validit&#233; CSS',p.cssv],['T&#233;l&#233;phone PRO',p.tel],['N&#176; Passeport',p.pass],['Validit&#233; Passeport',p.passv],['Visas',p.visa],['Check-in',p.ci+' UTC'],['Statut',p.accepte?' Accept&#233;':' En attente']];
   document.getElementById('pnc-m-body').innerHTML=rows.map(function(r){
     return '<div style="display:flex;align-items:center;gap:8px;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:13px"><div style="font-size:11px;color:var(--gold);text-transform:uppercase;letter-spacing:.6px;min-width:120px;flex-shrink:0">'+r[0]+'</div><div>'+r[1]+'</div></div>';
   }).join('');
@@ -1091,12 +1091,12 @@ function renderDeclGen(){
   var el=document.getElementById('decl-gen');if(!el)return;
   var acc=PNC_DATA.filter(function(p){return p.accepte}).length;
   el.innerHTML='<div style="background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:8px;padding:12px;font-size:13px">'
-    +'<div style="font-size:13px;font-weight:700;text-align:center;text-transform:uppercase;letter-spacing:1px;color:var(--gold2);margin-bottom:10px">DÃCLARATION GÃNÃRALE â VOL AH 7101</div>'
-    +'<div style="font-size:11px;color:var(--muted);margin-bottom:10px">ALG &rarr; CDG Â· '+new Date().toLocaleDateString('fr-FR')+'</div>'
-    +'<div style="overflow-x:auto"><table class="decl-t"><thead><tr><th>Matricule</th><th>Nom & PrÃ©nom</th><th>RÃ´le</th><th>Passeport</th><th>Acceptation</th></tr></thead><tbody>'
-    +PNC_DATA.map(function(p){return '<tr><td>'+p.id+'</td><td style="font-weight:600">'+p.nom+'</td><td>'+p.role+'</td><td>'+p.pass+'</td><td>'+(p.accepte?'<span style="color:var(--green)">SignÃ©</span>':'<span style="color:var(--amber)"></span>')+'</td></tr>';}).join('')
+    +'<div style="font-size:13px;font-weight:700;text-align:center;text-transform:uppercase;letter-spacing:1px;color:var(--gold2);margin-bottom:10px">D&#201;CLARATION G&#201;N&#201;RALE &#8212; VOL AH 7101</div>'
+    +'<div style="font-size:11px;color:var(--muted);margin-bottom:10px">ALG &rarr; CDG &#183; '+new Date().toLocaleDateString('fr-FR')+'</div>'
+    +'<div style="overflow-x:auto"><table class="decl-t"><thead><tr><th>Matricule</th><th>Nom & Pr&#233;nom</th><th>R&#244;le</th><th>Passeport</th><th>Acceptation</th></tr></thead><tbody>'
+    +PNC_DATA.map(function(p){return '<tr><td>'+p.id+'</td><td style="font-weight:600">'+p.nom+'</td><td>'+p.role+'</td><td>'+p.pass+'</td><td>'+(p.accepte?'<span style="color:var(--green)">Sign&#233;</span>':'<span style="color:var(--amber)"></span>')+'</td></tr>';}).join('')
     +'</tbody></table></div>'
-    +'<div style="margin-top:8px;font-size:11px;color:var(--muted)">CDB: Cpt. Nadir BENALI Â· '+acc+'/'+PNC_DATA.length+' PNC acceptÃ©s</div>'
+    +'<div style="margin-top:8px;font-size:11px;color:var(--muted)">CDB: Cpt. Nadir BENALI &#183; '+acc+'/'+PNC_DATA.length+' PNC accept&#233;s</div>'
     +'</div>';
 }
 
@@ -1134,14 +1134,14 @@ function renderSpPax(){
   var icons={WCHR:'',UNAC:'',SPML:'',DEAF:'',BLND:''};
   el.innerHTML=SP_PAX.map(function(p){
     var c=cm[p.c]||cm.blue;
-    return '<div class="sp-item" style="background:'+c.bg+';border-color:'+c.bd+'"><div class="sp-ic" style="background:'+c.bg+';color:'+c.ic+'">'+icons[p.code]+'</div><div style="flex:1"><div style="font-weight:600;font-size:13px">'+p.nom+'</div><div style="font-size:11px;color:var(--muted)">SiÃ¨ge '+p.siege+' Â· <span class="badge ba" style="font-size:9px">'+p.code+'</span> '+p.label+'</div><div style="font-size:12px;margin-top:4px;color:'+c.ic+'">'+p.note+'</div></div></div>';
+    return '<div class="sp-item" style="background:'+c.bg+';border-color:'+c.bd+'"><div class="sp-ic" style="background:'+c.bg+';color:'+c.ic+'">'+icons[p.code]+'</div><div style="flex:1"><div style="font-weight:600;font-size:13px">'+p.nom+'</div><div style="font-size:11px;color:var(--muted)">Si&#232;ge '+p.siege+' &#183; <span class="badge ba" style="font-size:9px">'+p.code+'</span> '+p.label+'</div><div style="font-size:12px;margin-top:4px;color:'+c.ic+'">'+p.note+'</div></div></div>';
   }).join('');
 }
 
 // ===== PIL =====
 function genPIL(){
   if(S.pilData.length)return;
-  var fns=['Mohamed','Fatima','Ahmed','Nadia','Karim','LeÃ¯la','Omar','Amina','Hassan','Zineb','Jean','Marie','Pierre','Sophie','Luca','Maria'];
+  var fns=['Mohamed','Fatima','Ahmed','Nadia','Karim','Le&#239;la','Omar','Amina','Hassan','Zineb','Jean','Marie','Pierre','Sophie','Luca','Maria'];
   var lns=['BENALI','BOUDIAF','MERZOUGUI','KHELIFI','HAMIDI','AOUDIA','MARTIN','DUPONT','GARCIA','ROSSI'];
   for(var i=1;i<=186;i++){
     var row=Math.ceil(i/6);
@@ -1180,7 +1180,7 @@ function renderCatList(){
     var ok=S.catQty[i]>=item.req;
     return '<div class="cat-row"><div><div style="font-weight:500">'+item.n+'</div><div style="font-size:10px;color:var(--muted)">'+item.d+'</div></div>'
       +'<div style="font-weight:600">'+item.req+'</div>'
-      +'<div class="qty-c"><button class="qty-btn" onclick="adjCat('+i+',-1)">â</button><span class="qty-n" id="cq-'+i+'">'+S.catQty[i]+'</span><button class="qty-btn" onclick="adjCat('+i+',1)">+</button></div>'
+      +'<div class="qty-c"><button class="qty-btn" onclick="adjCat('+i+',-1)">&#8722;</button><span class="qty-n" id="cq-'+i+'">'+S.catQty[i]+'</span><button class="qty-btn" onclick="adjCat('+i+',1)">+</button></div>'
       +'<div><span class="badge '+(ok?'bg':'br')+'">'+(ok?' OK':' Manque')+'</span></div></div>';
   }).join('');
 }
@@ -1193,8 +1193,8 @@ function adjCat(i,d){
 
 function valCat(){
   var t=document.getElementById('cat-val-t');
-  if(t)t.textContent='ValidÃ© le '+new Date().toLocaleTimeString('fr-FR')+' UTC';
-  showToast(' Inventaire catering validÃ© !','green');
+  if(t)t.textContent='Valid&#233; le '+new Date().toLocaleTimeString('fr-FR')+' UTC';
+  showToast(' Inventaire catering valid&#233; !','green');
 }
 
 function renderDrinks(){
@@ -1207,7 +1207,7 @@ function renderDrinks(){
 // ===== FORECAST =====
 function renderForecast(){
   var el=document.getElementById('fc-grid');if(!el)return;
-  var items=[{t:'08:00',ic:'',tmp:'28Â°C'},{t:'09:00',ic:'',tmp:'26Â°C'},{t:'10:00',ic:'',tmp:'22Â°C'},{t:'11:00',ic:'',tmp:'20Â°C'},{t:'12:00',ic:'',tmp:'18Â°C'},{t:'13:00',ic:'',tmp:'19Â°C'}];
+  var items=[{t:'08:00',ic:'',tmp:'28&#176;C'},{t:'09:00',ic:'',tmp:'26&#176;C'},{t:'10:00',ic:'',tmp:'22&#176;C'},{t:'11:00',ic:'',tmp:'20&#176;C'},{t:'12:00',ic:'',tmp:'18&#176;C'},{t:'13:00',ic:'',tmp:'19&#176;C'}];
   el.innerHTML=items.map(function(i){return '<div class="fc-item"><div class="fc-time">'+i.t+'</div><div style="font-size:22px">'+i.ic+'</div><div class="fc-temp">'+i.tmp+'</div></div>';}).join('');
 }
 
@@ -1215,7 +1215,7 @@ function renderForecast(){
 function renderQuizHist(){
   var el=document.getElementById('quiz-hist');if(!el)return;
   el.innerHTML=S.histQuiz.map(function(h){
-    return '<div style="display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:12px"><span>'+h.date+'</span><span style="font-weight:700;color:'+(h.pct>=70?'var(--green)':'var(--red)')+'">'+h.score+'/'+h.total+' â '+h.pct+'%</span><span class="badge '+(h.pct>=70?'bg':'br')+'" style="font-size:9px">'+(h.pct>=70?'RÃ©ussi':'ÃchouÃ©')+'</span></div>';
+    return '<div style="display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:12px"><span>'+h.date+'</span><span style="font-weight:700;color:'+(h.pct>=70?'var(--green)':'var(--red)')+'">'+h.score+'/'+h.total+' &#8212; '+h.pct+'%</span><span class="badge '+(h.pct>=70?'bg':'br')+'" style="font-size:9px">'+(h.pct>=70?'R&#233;ussi':'&#201;chou&#233;')+'</span></div>';
   }).join('');
 }
 
@@ -1254,7 +1254,7 @@ function selOpt(i,btn){
 }
 
 function nextQ(){
-  if(S.quiz.answers[S.quiz.cur]===null){showToast(' SÃ©lectionnez une rÃ©ponse','amber');return;}
+  if(S.quiz.answers[S.quiz.cur]===null){showToast(' S&#233;lectionnez une r&#233;ponse','amber');return;}
   if(S.quiz.cur<S.quiz.questions.length-1){S.quiz.cur++;renderQuestion();}
   else finishQuiz();
 }
@@ -1285,14 +1285,14 @@ function finishQuiz(){
     var ok=ans===q.correct;
     return '<div style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05);text-align:left"><div style="font-weight:600;font-size:12px;margin-bottom:3px">'+(i+1)+'. '+q.q+'</div>'
       +'<div style="color:'+(ok?'var(--green)':'var(--red)')+';font-size:12px">'+(ok?'':'')+' '+q.opts[ans]+'</div>'
-      +(!ok?'<div style="color:var(--muted);font-size:11px">Bonne rÃ©ponse: '+q.opts[q.correct]+'</div>':'')
+      +(!ok?'<div style="color:var(--muted);font-size:11px">Bonne r&#233;ponse: '+q.opts[q.correct]+'</div>':'')
       +'<div style="color:rgba(255,255,255,.4);font-size:11px;font-style:italic;margin-top:2px">'+q.expl+'</div></div>';
   }).join('');
   document.getElementById('q-res-content').innerHTML='<div style="font-size:56px;font-weight:700;color:'+(passed?'var(--green)':'var(--red)')+'">'+pct+'%</div>'
-    +'<div style="font-size:14px;color:var(--muted);margin-bottom:8px">'+correct+'/'+S.quiz.questions.length+' bonnes rÃ©ponses</div>'
-    +'<div style="margin-bottom:18px">'+(passed?' Test rÃ©ussi !':' Score insuffisant (70% requis)')+'</div>'
+    +'<div style="font-size:14px;color:var(--muted);margin-bottom:8px">'+correct+'/'+S.quiz.questions.length+' bonnes r&#233;ponses</div>'
+    +'<div style="margin-bottom:18px">'+(passed?' Test r&#233;ussi !':' Score insuffisant (70% requis)')+'</div>'
     +'<button class="btn btn-g" onclick="restartQuiz()" style="margin-bottom:16px">Recommencer</button>'
-    +'<div style="text-align:left;border-top:1px solid var(--border);padding-top:12px"><div style="font-size:11px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;letter-spacing:.8px">RÃ©vision</div>'+review+'</div>';
+    +'<div style="text-align:left;border-top:1px solid var(--border);padding-top:12px"><div style="font-size:11px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;letter-spacing:.8px">R&#233;vision</div>'+review+'</div>';
   S.histQuiz.unshift({date:new Date().toLocaleDateString('fr-FR'),score:correct,total:S.quiz.questions.length,pct:pct});
 }
 
@@ -1313,7 +1313,7 @@ function renderManuels(filter){
     return '<div style="font-size:11px;text-transform:uppercase;color:var(--gold);margin:14px 0 7px;letter-spacing:1px;display:flex;align-items:center;gap:6px">'+sec.cat+'</div>'
       +items.map(function(m){
         return '<div class="man-item"><div class="man-ic"></div><div class="man-info"><div class="man-title">'+m.t+'</div><div class="man-meta">'+m.m+'</div></div>'
-          +'<span class="badge '+(m.s==='ok'?'bg':'ba')+'" style="font-size:9px;flex-shrink:0">'+(m.s==='ok'?'Ã jour':'Mis Ã  jour')+'</span>'
+          +'<span class="badge '+(m.s==='ok'?'bg':'ba')+'" style="font-size:9px;flex-shrink:0">'+(m.s==='ok'?'&#192; jour':'Mis &#224; jour')+'</span>'
           +'<button onclick="showToast(\' Ouverture...\',\'blue\')" style="background:none;border:1px solid var(--border);color:var(--muted);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:12px;flex-shrink:0"></button>'
           +'</div>';
       }).join('');
@@ -1324,7 +1324,7 @@ function filterMans(q){renderManuels(q);}
 // ===== RAPPORT =====
 function signDoc(who){
   var el=document.getElementById('sig-'+who);
-  if(el){el.classList.add('signed');el.textContent=' SignÃ© â '+(S.user?S.user.nom:'CDC')+' Â· '+new Date().toLocaleTimeString('fr-FR')+' UTC';}
+  if(el){el.classList.add('signed');el.textContent=' Sign&#233; &#8212; '+(S.user?S.user.nom:'CDC')+' &#183; '+new Date().toLocaleTimeString('fr-FR')+' UTC';}
 }
 function submitRap(){
   showToast(' Rapport AH 7101 soumis dans AIMS !','green');
@@ -1375,7 +1375,7 @@ function saveProfil(){
   var sm=document.getElementById('sb-mat');if(sm)sm.textContent=p.id;
   var nd=document.getElementById('prof-name-d');if(nd)nd.textContent=nom;
   var md=document.getElementById('prof-mat-d');if(md)md.textContent=p.id;
-  showToast(' Profil sauvegardÃ© !','green');
+  showToast(' Profil sauvegard&#233; !','green');
 }
 
 function changePhoto(){
@@ -1401,14 +1401,14 @@ function connectEcrew(){
   var u=document.getElementById('ec-u').value.trim();
   var p=document.getElementById('ec-p').value.trim();
   if(!u||!p){showEcrewMsg(' Saisissez vos identifiants eCrew.','amber');return;}
-  showEcrewMsg(' Connexion eCrew Air AlgÃ©rie...','blue');
+  showEcrewMsg(' Connexion eCrew Air Alg&#233;rie...','blue');
   localStorage.setItem('ecrew_u',u);
   localStorage.setItem('ecrew_p',p);
   setTimeout(function(){
     localStorage.setItem('ecrew_conn','1');
     setEcrewStatus(true);
-    showEcrewMsg(' ConnectÃ© Ã  eCrew ! Identifiants mÃ©morisÃ©s.','green');
-    showToast(' eCrew connectÃ© !','green');
+    showEcrewMsg(' Connect&#233; &#224; eCrew ! Identifiants m&#233;moris&#233;s.','green');
+    showToast(' eCrew connect&#233; !','green');
   },1800);
 }
 
@@ -1416,17 +1416,17 @@ function setEcrewStatus(conn){
   var st=document.getElementById('ecrew-status');
   var lb=document.getElementById('ecrew-label');
   if(st){st.className=conn?'ecrew-conn':'ecrew-disc';}
-  if(lb)lb.textContent=conn?'ConnectÃ© Ã  eCrew Â· Sync: '+new Date().toLocaleTimeString('fr-FR'):'Non connectÃ©';
+  if(lb)lb.textContent=conn?'Connect&#233; &#224; eCrew &#183; Sync: '+new Date().toLocaleTimeString('fr-FR'):'Non connect&#233;';
 }
 
 function syncEcrew(){
   if(localStorage.getItem('ecrew_conn')!=='1'){showEcrewMsg(' Connectez-vous d\'abord.','amber');return;}
   showEcrewMsg(' Synchronisation...','blue');
-  setTimeout(function(){showEcrewMsg(' Planning synchronisÃ© !','green');showToast(' Planning AIMS synchronisÃ© !','green');},1200);
+  setTimeout(function(){showEcrewMsg(' Planning synchronis&#233; !','green');showToast(' Planning AIMS synchronis&#233; !','green');},1200);
 }
 
 function openEcrew(){
-  showToast(' Ouverture eCrew Air AlgÃ©rie...','blue');
+  showToast(' Ouverture eCrew Air Alg&#233;rie...','blue');
   window.open('https://ecrew.airalgerie.dz','_blank');
 }
 
